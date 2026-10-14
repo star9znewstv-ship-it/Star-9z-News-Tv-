@@ -3,171 +3,965 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>STAR 9Z NEWS TV - CEO Muhammad Iftikhar</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#06152c">
+
+<title>STAR 9Z NEWS TV | Truth News People</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#040a12;color:#fff;font-family:system-ui}
-.header-main{width:100%;height:580px;position:relative;background:radial-gradient(ellipse at center,#0e2a5a 0%,#06152c 50%,#040a12 90%);overflow:hidden;border-bottom:4px solid #e51d2a;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.globe{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#2a7bff 0%,#0a3ab0 35%,#06152c 70%);box-shadow:inset 0 0 80px #000,0 0 80px rgba(0,100,255,.5);animation:globeRot 28s linear infinite;opacity:.75}
-.globe::before{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid rgba(90,156,255,.25);background:repeating-linear-gradient(90deg,transparent 0 30px,rgba(255,255,255,.06) 30px 31px)}
-.globe::after{content:'';position:absolute;inset:-15px;border-radius:50%;border:1.5px solid rgba(229,29,42,.3);border-top-color:#ffcc00;animation:ring 12s linear infinite}
-@keyframes globeRot{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-@keyframes ring{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.logo-main{position:relative;z-index:5;text-align:center;animation:logoFloat 5s ease-in-out infinite}
-@keyframes logoFloat{0%,100%{transform:perspective(600px) rotateY(-10deg) translateY(0)}50%{transform:perspective(600px) rotateY(10deg) translateY(-10px)}}
-.slogo{font-size:48px;font-weight:900;color:#fff;text-shadow:2px 4px 0 #e51d2a,0 0 30px #168bff;letter-spacing:2px}
-.tag{margin-top:8px;color:#e8edf5;letter-spacing:4px;font-size:13px;font-weight:700}
-.live-badge{z-index:5;margin-top:18px;background:linear-gradient(90deg,#e51d2a,#9a0000);border:2px solid #ffcc00;padding:10px 26px;border-radius:50px;font-weight:900;font-size:14px;box-shadow:0 0 20px #e51d2a;text-align:center}
-.time-badge{z-index:5;margin-top:10px;background:#000;color:#ffcc00;border:1.5px solid #ffcc00;padding:8px 22px;border-radius:25px;font-weight:900;font-size:15px;box-shadow:0 0 15px rgba(255,204,0,.4)}
-.s9z-breaking{display:flex;align-items:center;background:#fff;color:#111;overflow:hidden;min-height:46px;border-bottom:3px solid #e51d2a}
-.s9z-breaking strong{background:#e51d2a;color:#fff;padding:14px 14px;white-space:nowrap;z-index:1}
-.s9z-breaking-track{overflow:hidden;flex:1;white-space:nowrap}
-.s9z-breaking-text{display:inline-block;padding-left:100%;font-weight:900;animation:s9z-ticker 50s linear infinite;font-family:'Noto Nastaliq Urdu',serif;font-size:20px}
-@keyframes s9z-ticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
-.ticker-red{width:100%;height:66px;background:linear-gradient(90deg,#e51d2a,#900000);display:flex;align-items:center;overflow:hidden;border-bottom:2px solid #000}
-.marq-red{white-space:nowrap;animation:mR 50s linear infinite;font-family:'Noto Nastaliq Urdu',serif;font-size:22px;font-weight:700;color:#fff;padding-left:100%}
-@keyframes mR{0%{transform:translateX(100%)}100%{transform:translateX(-300%)}}
-.wrap{max-width:1220px;margin:20px auto;padding:0 12px}
-.section-title{border-right:5px solid #e51d2a;padding:10px 14px;margin:24px 0 16px;background:#12243a;font-size:20px;font-weight:900;display:flex;justify-content:space-between;align-items:center}
-.section-title span{font-size:11px;background:#e51d2a;padding:4px 10px;border-radius:12px}
-.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.news-card{background:#101e30;border:1px solid #263b55;border-radius:10px;overflow:hidden;transition:.2s;cursor:pointer}
-.news-card:hover{transform:translateY(-4px);border-color:#e51d2a}
-.news-card img{width:100%;height:190px;object-fit:cover;background:#1b2a3d}
-.lbl{display:inline-block;background:#e51d2a;padding:5px 10px;margin:12px 12px 0;font-size:11px;font-weight:900}
-.news-card h3{margin:10px 12px;font-size:15px;line-height:1.7;font-family:'Noto Nastaliq Urdu',serif}
-.news-card p{margin:0 12px 12px;color:#c6d1df;font-size:13px;line-height:1.6}
-.form-wrap{background:#fff;color:#111;border-radius:16px;overflow:hidden;border:3px solid #e51d2a;margin-top:28px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
-.form-head{background:linear-gradient(90deg,#06152c,#123d68);color:#ffcc00;text-align:center;padding:20px;font-size:20px;font-weight:900;line-height:1.7}
-.form-head small{color:#fff;font-size:13px;display:block}
-.fee{color:#00ff88;background:#002a14;padding:6px 16px;border-radius:20px;border:1px solid #00ff88;display:inline-block;margin-top:8px;font-size:14px}
-.fbody{padding:18px}label{font-weight:900;display:block;margin-top:12px;color:#06152c;font-size:13px}
-input,select,textarea{width:100%;padding:12px;border:1.6px solid #aaa;border-radius:10px;margin-top:5px}
-.radio{display:flex;gap:10px;margin-top:6px}.radio label{background:#f0f0f0;padding:8px 14px;border-radius:20px;border:1px solid #aaa;cursor:pointer;color:#111;font-size:13px}
-.upload{border:2px dashed #123d68;background:#f0f6ff;border-radius:12px;padding:12px;text-align:center;margin-top:8px;cursor:pointer}
-.upload img{width:90px;height:90px;object-fit:cover;border-radius:10px;border:3px solid #e51d2a;display:none;margin:8px auto}
-.btn{width:100%;background:linear-gradient(180deg,#25D366,#128C7E);color:#fff;padding:14px;border:0;border-radius:35px;font-size:18px;font-weight:900;margin-top:14px;cursor:pointer}
-.btn-pay{background:linear-gradient(90deg,#00a651,#006400);border:2px solid #ffcc00}
-.management{padding:24px 12px;margin-top:30px;background:#10233a;text-align:center;line-height:2;border-top:3px solid #e51d2a;border-radius:12px}
-.management h2{color:#fff}.management p{color:#dce7f5;margin:5px}.management b{color:#ff4b55}
-.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:20px 10px}
-.contact a{display:inline-block;color:#fff;text-decoration:none;padding:13px 22px;border-radius:8px;font-weight:900}
-.wa{background:#087d48}.ep{background:#164c86;border:2px solid #ffcc00}
-.footer{text-align:center;padding:20px 10px;color:#b7c7da;background:#040a12;font-size:13px;border-top:2px solid #e51d2a}
-@media(max-width:900px){.header-main{height:500px}.globe{width:350px;height:350px}.slogo{font-size:32px}}
+
+body{
+ background:#040a12;
+ color:#fff;
+ font-family:Arial,sans-serif;
+ overflow-x:hidden
+}
+
+.header-main{
+ min-height:470px;
+ position:relative;
+ background:radial-gradient(ellipse at center,#123d75,#06152c 60%,#040a12);
+ overflow:hidden;
+ border-bottom:4px solid #e51d2a;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ padding:30px 12px
+}
+
+.globe{
+ position:absolute;
+ width:340px;
+ height:340px;
+ border-radius:50%;
+ background:radial-gradient(circle at 30% 30%,#2a7bff,#0a3ab0 40%,#06152c 75%);
+ box-shadow:inset 0 0 50px #000,0 0 70px #075dff;
+ animation:globeRot 25s linear infinite;
+ opacity:.7
+}
+
+.globe:before{
+ content:"";
+ position:absolute;
+ inset:0;
+ border-radius:50%;
+ border:1px solid #6aa7ff;
+ background:repeating-linear-gradient(
+  90deg,transparent 0 25px,rgba(255,255,255,.08) 26px
+ )
+}
+
+.globe:after{
+ content:"";
+ position:absolute;
+ inset:-12px;
+ border-radius:50%;
+ border:2px solid #e51d2a;
+ border-top-color:#ffcc00;
+ animation:globeRot 10s linear infinite
+}
+
+@keyframes globeRot{
+ to{transform:rotate(360deg)}
+}
+
+.logo-main{
+ position:relative;
+ z-index:2;
+ text-align:center;
+ animation:floatLogo 5s ease-in-out infinite
+}
+
+@keyframes floatLogo{
+ 0%,100%{transform:translateY(0)}
+ 50%{transform:translateY(-8px)}
+}
+
+.slogo{
+ font-size:clamp(27px,5vw,48px);
+ font-weight:900;
+ color:white;
+ text-shadow:3px 4px 0 #e51d2a,0 0 25px #168bff
+}
+
+.tag{
+ margin-top:8px;
+ font-size:13px;
+ letter-spacing:3px;
+ font-weight:bold
+}
+
+.hd-title{
+ margin-top:12px;
+ font-size:clamp(24px,5vw,38px);
+ font-weight:900;
+ color:#ffcc00;
+ text-shadow:0 0 15px #ffcc00
+}
+
+.live-badge,.time-badge{
+ position:relative;
+ z-index:3;
+ margin-top:14px;
+ padding:10px 16px;
+ border-radius:30px;
+ text-align:center;
+ font-weight:bold;
+ max-width:100%;
+ overflow-wrap:anywhere
+}
+
+.live-badge{
+ background:#b90016;
+ border:2px solid #ffcc00
+}
+
+.time-badge{
+ background:#000;
+ color:#ffcc00;
+ border:1px solid #ffcc00;
+ direction:rtl
+}
+
+.s9z-breaking{
+ display:flex;
+ align-items:center;
+ background:white;
+ color:#111;
+ min-height:48px;
+ overflow:hidden;
+ border-bottom:3px solid #e51d2a
+}
+
+.s9z-breaking strong{
+ background:#e51d2a;
+ color:white;
+ padding:15px 12px;
+ white-space:nowrap;
+ z-index:1;
+ direction:ltr
+}
+
+.s9z-breaking-track{
+ overflow:hidden;
+ flex:1;
+ white-space:nowrap
+}
+
+.s9z-breaking-text{
+ display:inline-block;
+ padding-left:100%;
+ font-family:'Noto Nastaliq Urdu',serif;
+ font-size:17px;
+ font-weight:bold;
+ animation:breakingMove 35s linear infinite
+}
+
+@keyframes breakingMove{
+ from{transform:translateX(0)}
+ to{transform:translateX(-100%)}
+}
+
+.ticker-red{
+ width:100%;
+ min-height:48px;
+ background:linear-gradient(90deg,#e51d2a,#900000);
+ display:flex;
+ align-items:center;
+ overflow:hidden
+}
+
+.marq-red{
+ white-space:nowrap;
+ font-family:'Noto Nastaliq Urdu',serif;
+ font-size:17px;
+ font-weight:bold;
+ padding-left:100%;
+ animation:redMove 35s linear infinite
+}
+
+@keyframes redMove{
+ from{transform:translateX(0)}
+ to{transform:translateX(-100%)}
+}
+
+.wrap{
+ max-width:1220px;
+ margin:20px auto;
+ padding:0 12px
+}
+
+.section-title{
+ border-right:5px solid #e51d2a;
+ padding:12px;
+ margin:26px 0 16px;
+ background:#12243a;
+ font-family:'Noto Nastaliq Urdu',serif;
+ font-size:19px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:8px
+}
+
+.section-title span{
+ font-family:Arial,sans-serif;
+ font-size:11px;
+ background:#e51d2a;
+ padding:5px 9px;
+ border-radius:15px;
+ white-space:nowrap
+}
+
+.news-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));
+ gap:16px
+}
+
+.news-card{
+ background:#101e30;
+ border:1px solid #263b55;
+ border-radius:10px;
+ overflow:hidden;
+ transition:.2s;
+ cursor:pointer;
+ min-width:0
+}
+
+.news-card:hover{
+ transform:translateY(-3px);
+ border-color:#e51d2a
+}
+
+.news-card img{
+ width:100%;
+ height:190px;
+ object-fit:cover;
+ display:block;
+ background:#1b2a3d
+}
+
+.lbl{
+ display:inline-block;
+ background:#e51d2a;
+ padding:6px 10px;
+ margin:12px 12px 0;
+ font-size:11px;
+ font-weight:bold
+}
+
+.news-card h3{
+ margin:10px 12px;
+ font-size:16px;
+ line-height:2;
+ font-family:'Noto Nastaliq Urdu',serif
+}
+
+.news-card p{
+ margin:0 12px 14px;
+ color:#c6d1df;
+ font-size:13px;
+ line-height:1.9
+}
+
+.form-wrap{
+ background:white;
+ color:#111;
+ border-radius:14px;
+ overflow:hidden;
+ border:3px solid #e51d2a;
+ margin-top:30px
+}
+
+.form-head{
+ background:linear-gradient(90deg,#06152c,#123d68);
+ color:#ffcc00;
+ text-align:center;
+ padding:20px 12px;
+ font-family:'Noto Nastaliq Urdu',serif;
+ font-size:19px;
+ line-height:2
+}
+
+.form-head small{
+ display:block;
+ color:white;
+ font-family:Arial,sans-serif;
+ font-size:13px
+}
+
+.fee{
+ color:#00ff88;
+ background:#002a14;
+ padding:8px 12px;
+ border:1px solid #00ff88;
+ border-radius:20px;
+ display:inline-block;
+ margin-top:8px;
+ font-family:Arial,sans-serif;
+ font-size:13px
+}
+
+.fbody{padding:18px}
+
+label{
+ font-weight:bold;
+ display:block;
+ margin-top:13px;
+ color:#06152c;
+ font-size:13px
+}
+
+input,select,textarea{
+ width:100%;
+ padding:12px;
+ border:1px solid #aaa;
+ border-radius:9px;
+ margin-top:6px;
+ font-size:15px;
+ background:#fff;
+ color:#111
+}
+
+.radio{
+ display:flex;
+ gap:10px;
+ flex-wrap:wrap;
+ margin-top:8px
+}
+
+.radio label{
+ display:flex;
+ align-items:center;
+ gap:8px;
+ background:#f0f0f0;
+ padding:10px;
+ border-radius:20px;
+ border:1px solid #aaa;
+ color:#111;
+ margin:0
+}
+
+.radio input{width:auto;margin:0}
+
+.upload{
+ border:2px dashed #123d68;
+ background:#f0f6ff;
+ border-radius:12px;
+ padding:14px;
+ text-align:center;
+ margin-top:8px;
+ color:#111
+}
+
+.upload img{
+ width:90px;
+ height:90px;
+ object-fit:cover;
+ border-radius:10px;
+ border:2px solid #e51d2a;
+ display:none;
+ margin:10px auto
+}
+
+.upload input{background:transparent;border:0}
+
+.btn{
+ display:block;
+ width:100%;
+ background:#128C7E;
+ color:white;
+ padding:14px;
+ border:0;
+ border-radius:30px;
+ font-size:16px;
+ font-weight:bold;
+ margin-top:14px;
+ cursor:pointer;
+ text-align:center;
+ text-decoration:none
+}
+
+.btn-pay{
+ background:#006b35;
+ border:2px solid #ffcc00
+}
+
+.management{
+ padding:24px 12px;
+ margin-top:30px;
+ background:#10233a;
+ text-align:center;
+ line-height:2.2;
+ border-top:3px solid #e51d2a;
+ border-radius:12px;
+ overflow-wrap:anywhere
+}
+
+.management h2{
+ color:#ffcc00;
+ margin-bottom:10px
+}
+
+.management p{color:#dce7f5}
+
+.management b{color:#ff6670}
+
+.contact{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:12px;
+ padding:20px 10px
+}
+
+.contact a{
+ color:white;
+ text-decoration:none;
+ padding:13px 18px;
+ border-radius:8px;
+ font-weight:bold;
+ text-align:center
+}
+
+.wa{background:#087d48}
+
+.ep{
+ background:#164c86;
+ border:2px solid #ffcc00
+}
+
+.footer{
+ text-align:center;
+ padding:22px 10px;
+ color:#b7c7da;
+ background:#040a12;
+ font-size:12px;
+ line-height:2;
+ border-top:2px solid #e51d2a;
+ overflow-wrap:anywhere
+}
+
+.error{
+ color:#bd001b;
+ margin-top:12px;
+ font-weight:bold;
+ display:none;
+ line-height:1.8
+}
+
+.notice{
+ background:#fff8d6;
+ border:1px solid #ffcc00;
+ border-radius:9px;
+ padding:12px;
+ margin-top:15px;
+ font-size:12px;
+ line-height:1.9;
+ color:#664d03
+}
+
+@media(max-width:600px){
+ .header-main{min-height:420px}
+ .globe{width:280px;height:280px}
+ .tag{letter-spacing:2px;font-size:11px}
+ .time-badge{font-size:12px}
+ .section-title{font-size:16px}
+ .news-card h3{font-size:15px}
+}
 </style>
 </head>
+
 <body>
-<div class="header-main">
-<div class="globe"></div>
-<div class="logo-main">
-<div class="slogo">★ STAR 9Z NEWS TV ★</div>
-<div class="tag">TRUTH | NEWS | PEOPLE</div>
-<div style="margin-top:10px;font-size:38px;font-weight:900;background:linear-gradient(#fff,#ffcc00);-webkit-background-clip:text;-webkit-text-fill-color:transparent">STAR 9Z NEWS HD TV</div>
+
+<header class="header-main">
+ <div class="globe"></div>
+
+ <div class="logo-main">
+  <div class="slogo">★ STAR 9Z NEWS TV ★</div>
+  <div class="tag">TRUTH | NEWS | PEOPLE</div>
+  <div class="hd-title">STAR 9Z NEWS HD TV</div>
+ </div>
+
+ <div class="live-badge" id="autoDateBadge">● LIVE HD</div>
+ <div class="time-badge" id="autoTimeBadge">پاکستان کا وقت لوڈ ہو رہا ہے</div>
+</header>
+
+<div class="s9z-breaking">
+ <strong>BREAKING NEWS</strong>
+ <div class="s9z-breaking-track">
+  <div class="s9z-breaking-text" id="breakingText">
+   STAR 9Z NEWS TV — تازہ ترین خبریں
+  </div>
+ </div>
 </div>
-<div class="live-badge" id="autoDateBadge">● LIVE HD - لوڈ ہو رہا ہے...</div>
-<div class="time-badge" id="autoTimeBadge">⏰ ٹائم لوڈ ہو رہا ہے...</div>
+
+<div class="ticker-red">
+ <div class="marq-red" id="autoMarq">
+  STAR 9Z NEWS TV | TRUTH | NEWS | PEOPLE
+ </div>
 </div>
 
-<div class="s9z-breaking"><strong>BREAKING NEWS</strong><div class="s9z-breaking-track"><div class="s9z-breaking-text" id="breakingText">STAR 9Z NEWS TV — تازہ ترین خبریں لوڈ ہو رہی ہیں |</div></div></div>
-<div class="ticker-red"><div class="marq-red" id="autoMarq">پاکستان بھر سے نمائندگان کی ضرورت ہے | Easypaisa: 03223449924 | WhatsApp: 03227030993 |</div></div>
+<main class="wrap">
 
-<div class="wrap">
-<h2 class="section-title">📍 بہاولنگر - بریکنگ <span id="count-bah">LIVE</span></h2>
-<div class="news-grid" id="grid-bahawalnagar"></div>
+ <h2 class="section-title">
+  📍 بہاولنگر کی خبریں
+  <span id="count-bah">لوڈ ہو رہا ہے</span>
+ </h2>
+ <div class="news-grid" id="grid-bahawalnagar"></div>
 
-<h2 class="section-title">🇵🇰 پاکستان - لائیو <span id="count-pak">لوڈ ہو رہا ہے</span></h2>
-<div class="news-grid" id="grid-pakistan"></div>
+ <h2 class="section-title">
+  🇵🇰 پاکستان کی خبریں
+  <span id="count-pak">لوڈ ہو رہا ہے</span>
+ </h2>
+ <div class="news-grid" id="grid-pakistan"></div>
 
-<h2 class="section-title">🌍 دنیا - لائیو <span id="count-world">لوڈ ہو رہا ہے</span></h2>
-<div class="news-grid" id="grid-world"></div>
+ <h2 class="section-title">
+  🌍 دنیا کی خبریں
+  <span id="count-world">لوڈ ہو رہا ہے</span>
+ </h2>
+ <div class="news-grid" id="grid-world"></div>
 
-<div class="form-wrap"><div class="form-head">پاکستان بھر سے نمائندگان کی ضرورت ہے<small>Male & Female دونوں - تصویر لازمی</small><span class="fee">💰 Easypaisa: 03223449924 - Fees Rs.1000</span><small style="color:#ffcc00">Account Title: Muhammad Iftikhar</small></div><div class="fbody"><label>پورا نام *</label><input id="n1"><label>والد کا نام *</label><input id="n2"><label>جنس *</label><div class="radio"><label><input type="radio" name="gender" value="Male" checked> Male مرد</label><label><input type="radio" name="gender" value="Female"> Female خاتون</label></div><label>جگہ / ضلع / شہر *</label><input id="n3" placeholder="بہاولنگر، لاہور"><label>عہدہ *</label><select id="n4"><option>Bureau Chief</option><option>District Bureau Chief</option><option>Tehsil Bureau Chief</option><option>Crime Reporter</option><option>City Reporter</option><option>District Reporter</option><option>Anchor Person</option><option>Sub Editor</option><option>Cameraman</option><option>Correspondent</option></select><label>1. اپنی تصویر اپلوڈ کریں *</label><div class="upload" onclick="document.getElementById('p1').click()"><div>📸 تصویر منتخب کریں</div><img id="prev1"><div id="nm1" style="font-size:11px;color:#666"></div><input type="file" id="p1" accept="image/*" hidden onchange="show(this,'prev1','nm1')"></div><label>2. Easypaisa 1000 روپے کا سکرین شاٹ *</label><div class="upload" style="border-color:#00a651;background:#f0fff4" onclick="document.getElementById('p2').click()"><div style="color:#006400;font-weight:900">💰 پیمنٹ سکرین شاٹ</div><img id="prev2"><div id="nm2" style="font-size:11px;color:#666"></div><input type="file" id="p2" accept="image/*" hidden onchange="show(this,'prev2','nm2')"><div style="font-size:11px;color:#006400">Easypaisa: 03223449924 پر 1000 بھیج کر سکرین شاٹ لیں</div></div><label>موبائل *</label><input id="n5" type="tel"><label>تعلیم *</label><input id="n6"><label>تجربہ *</label><textarea id="n7" rows="3"></textarea><label>Easypaisa Transaction ID *</label><input id="n8" placeholder="TID: 1234567890"><div style="background:#fff8d6;border:1px solid #ffcc00;border-radius:10px;padding:10px;margin-top:12px;font-size:12px;color:#664d03"><b>طریقہ:</b> 1. 03223449924 پر 1000 بھیجیں 2. سکرین شاٹ لیں 3. TID لکھیں 4. Submit کریں</div><button type="button" class="btn btn-pay" onclick="openEP()">💰 Easypaisa کھولیں - 03223449924 پر 1000 بھیجیں</button><button type="button" class="btn" onclick="sendWA()">📱 سارا ڈیٹا WhatsApp پر بھیجیں - 03227030993</button><p id="ok" style="display:none;color:green;text-align:center;font-weight:900;margin-top:12px">✅ WhatsApp کھل رہا ہے</p><p id="err" style="display:none;color:red;text-align:center;font-weight:700;margin-top:10px;font-size:13px"></p></div></div>
+ <section class="form-wrap">
+  <div class="form-head">
+   پاکستان بھر سے نمائندگان کی ضرورت ہے
+   <small>Male & Female دونوں درخواست دے سکتے ہیں</small>
+   <small>تصویر اور ادائیگی کے ثبوت کی ضرورت ہوگی</small>
 
-<div class="management"><h2>STAR 9Z NEWS TV — Management</h2><p><b>MUHAMMAD IFTIKHAR - CEO - S/o Zulfiqar</b></p><p><b>RAUF AHMAD - COO</b></p><p><b>MUHAMMAD SHAFIQ - Director</b></p><p style="margin-top:12px">WhatsApp: 03227030993 | Easypaisa: 03223449924 | Email: star9znewstv@gmail.com</p></div>
-<div class="contact"><a class="wa" href="https://wa.me/923227030993" target="_blank">📱 WhatsApp - 03227030993</a><a class="ep" href="tel:03223449924">💰 EasyPaisa - 03223449924</a></div>
-</div>
-<div class="footer">STAR 9Z NEWS TV | TRUTH • NEWS • PEOPLE<br>Owner: CEO Muhammad Iftikhar S/o Zulfiqar | PVD-STAR9Z-2026-1009<br>© 2026 STAR 9Z NEWS TV</div>
+   <div class="fee">
+    Easypaisa: 03223449924 | فیس: Rs.1000
+   </div>
+
+   <small>Account Title: Muhammad Iftikhar</small>
+  </div>
+
+  <form class="fbody" id="representativeForm">
+
+   <label for="n1">پورا نام *</label>
+   <input id="n1" required>
+
+   <label for="n2">والد کا نام *</label>
+   <input id="n2" required>
+
+   <label>جنس *</label>
+   <div class="radio">
+    <label>
+     <input type="radio" name="gender" value="Male" checked>
+     مرد
+    </label>
+
+    <label>
+     <input type="radio" name="gender" value="Female">
+     خاتون
+    </label>
+   </div>
+
+   <label for="n3">شہر / تحصیل / ضلع *</label>
+   <input id="n3" placeholder="مثلاً بہاولنگر" required>
+
+   <label for="n4">عہدہ منتخب کریں *</label>
+   <select id="n4" required>
+    <option>Bureau Chief</option>
+    <option>District Bureau Chief</option>
+    <option>Tehsil Bureau Chief</option>
+    <option>Crime Reporter</option>
+    <option>City Reporter</option>
+    <option>District Reporter</option>
+    <option>Anchor Person</option>
+    <option>Sub Editor</option>
+    <option>Cameraman</option>
+    <option>Correspondent</option>
+   </select>
+
+   <label for="p1">اپنی تصویر منتخب کریں *</label>
+   <div class="upload">
+    <input type="file" id="p1" accept="image/*" required>
+    <img id="prev1" alt="تصویر کا پیش منظر">
+    <div id="nm1"></div>
+   </div>
+
+   <label for="p2">Easypaisa ادائیگی کا اسکرین شاٹ *</label>
+   <div class="upload">
+    <input type="file" id="p2" accept="image/*" required>
+    <img id="prev2" alt="اسکرین شاٹ کا پیش منظر">
+    <div id="nm2"></div>
+   </div>
+
+   <label for="n5">موبائل نمبر *</label>
+   <input id="n5" type="tel" required>
+
+   <label for="n6">تعلیم *</label>
+   <input id="n6" required>
+
+   <label for="n7">صحافتی تجربہ *</label>
+   <textarea id="n7" rows="3" required></textarea>
+
+   <label for="n8">Easypaisa Transaction ID *</label>
+   <input id="n8" placeholder="Transaction ID درج کریں" required>
+
+   <div class="notice">
+    <b>اہم ہدایات:</b><br>
+    1۔ ادائیگی سے پہلے چینل کی پالیسی اور فیس کی تصدیق کریں۔<br>
+    2۔ اپنی اصل تصویر اور ادائیگی کا ثبوت منتخب کریں۔<br>
+    3۔ فارم بھیجنے سے پہلے تمام معلومات چیک کریں۔<br>
+    4۔ درخواست جمع ہونا تقرری یا ادائیگی کی تصدیق نہیں ہے۔
+   </div>
+
+   <a class="btn btn-pay"
+      href="https://wa.me/923223449924"
+      target="_blank" rel="noopener">
+    Easypaisa رابطہ کھولیں
+   </a>
+
+   <button type="submit" class="btn">
+    WhatsApp پر درخواست کی تفصیلات بھیجیں
+   </button>
+
+   <p id="err" class="error"></p>
+  </form>
+ </section>
+
+ <section class="management">
+  <h2>STAR 9Z NEWS TV — Management</h2>
+
+  <p><b>MUHAMMAD IFTIKHAR — Chief Executive Officer (CEO)</b></p>
+  <p><b>RAUF AHMAD — Chief Operating Officer (COO)</b></p>
+  <p><b>MUHAMMAD SHAFIQ — Director</b></p>
+
+  <p>WhatsApp: 03227030993</p>
+  <p>Easypaisa: 03223449924</p>
+  <p>Email: star9znewstv@gmail.com</p>
+ </section>
+
+ <div class="contact">
+  <a class="wa"
+     href="https://wa.me/923227030993"
+     target="_blank" rel="noopener">
+   WhatsApp: 03227030993
+  </a>
+
+  <a class="ep" href="tel:03223449924">
+   Easypaisa: 03223449924
+  </a>
+ </div>
+
+</main>
+
+<footer class="footer">
+ STAR 9Z NEWS TV | TRUTH • NEWS • PEOPLE<br>
+ Owner: CEO Muhammad Iftikhar<br>
+ © 2026 STAR 9Z NEWS TV
+</footer>
 
 <script>
-function show(input, prev, nm){ if(input.files && input.files[0]){ let r=new FileReader(); r.onload=function(e){let img=document.getElementById(prev);img.src=e.target.result;img.style.display='block';document.getElementById(nm).innerText=input.files[0].name} r.readAsDataURL(input.files[0]); } }
-function openEP(){alert('Easypaisa: 03223449924 - Title: Muhammad Iftikhar');window.open('https://wa.me/923223449924','_blank');}
+/* =====================================
+   PAKISTAN DATE AND LIVE CLOCK
+   Time zone: Asia/Karachi
+===================================== */
 
 function updateDateTime(){
-  var now = new Date();
-  var days = ["اتوار","پیر","منگل","بدھ","جمعرات","جمعہ","ہفتہ"];
-  var months = ["جنوری","فروری","مارچ","اپریل","مئی","جون","جولائی","اگست","ستمبر","اکتوبر","نومبر","دسمبر"];
-  var dayName = days[now.getDay()];
-  var date = now.getDate();
-  var monthName = months[now.getMonth()];
-  var year = now.getFullYear();
-  var h = now.getHours();
-  var m = now.getMinutes();
-  var s = now.getSeconds();
-  var ampm = h >= 12? "شام" : "صبح";
-  h = h % 12; h = h? h : 12;
-  m = m < 10? "0"+m : m;
-  s = s < 10? "0"+s : s;
-  var dateStr = dayName + "، " + date + " " + monthName + " " + year;
-  var timeStr = h + ":" + m + ":" + s + " " + ampm;
-  var fullStr = dateStr + " - " + timeStr;
-  document.getElementById("autoDateBadge").innerHTML = "● LIVE HD - " + dateStr + " - CEO Muhammad Iftikhar";
-  document.getElementById("autoTimeBadge").innerHTML = "⏰ ٹائم: " + timeStr + " - " + dateStr;
-  document.getElementById("breakingText").innerHTML = "STAR 9Z NEWS TV — " + fullStr + " | بہاولنگر فورٹ عباس میں 5 منشیات فروش گرفتار | Easypaisa: 03223449924 | WhatsApp: 03227030993 |";
-  document.getElementById("autoMarq").innerHTML = fullStr + " - بہاولنگر: فورٹ عباس میں پولیس کی بڑی کارروائی، 5 ملزمان گرفتار | پاکستان بھر سے نمائندگان کی ضرورت ہے |";
+ const now = new Date();
+
+ const dateStr = new Intl.DateTimeFormat("ur-PK",{
+  timeZone:"Asia/Karachi",
+  weekday:"long",
+  day:"numeric",
+  month:"long",
+  year:"numeric"
+ }).format(now);
+
+ const timeStr = new Intl.DateTimeFormat("en-GB",{
+  timeZone:"Asia/Karachi",
+  hour:"2-digit",
+  minute:"2-digit",
+  second:"2-digit",
+  hour12:true
+ }).format(now);
+
+ const dateBadge = document.getElementById("autoDateBadge");
+ const timeBadge = document.getElementById("autoTimeBadge");
+ const breaking = document.getElementById("breakingText");
+ const marquee = document.getElementById("autoMarq");
+
+ if(dateBadge){
+  dateBadge.textContent = "● LIVE HD | " + dateStr;
+ }
+
+ if(timeBadge){
+  timeBadge.textContent =
+   "⏰ پاکستان کا وقت: " + timeStr + " | " + dateStr;
+ }
+
+ if(breaking){
+  breaking.textContent =
+   "STAR 9Z NEWS TV | " + dateStr +
+   " | پاکستان کا وقت: " + timeStr +
+   " | TRUTH | NEWS | PEOPLE";
+ }
+
+ if(marquee){
+  marquee.textContent =
+   "پاکستان کا وقت: " + timeStr +
+   " | تاریخ: " + dateStr +
+   " | STAR 9Z NEWS TV | TRUTH | NEWS | PEOPLE";
+ }
 }
 
-const pinNews = `<div class="news-card" style="border:3px solid #ffcc00;background:linear-gradient(180deg,#1e3a5f,#101e30);box-shadow:0 0 25px rgba(255,204,0,.4);"><img src="https://images.unsplash.com/photo-1580130775562-0ef92da028de?w=600"><span class="lbl" style="background:#ffcc00;color:#000;">BAHAWALNAGAR - بیورو چیف عرفان قادر - STAR 9Z NEWS TV</span><h3 style="font-size:20px;color:#ffcc00;">بہاولنگر سے رپورٹ کر رہے ہیں اسٹار 9 زی نیوز کے بیورو چیف عرفان قادر - فورٹ عباس میں پولیس کی بڑی کارروائی</h3><div style="margin:0 12px 12px;color:#fff;font-size:15px;line-height:2.4;font-family:'Noto Nastaliq Urdu',serif;"><p>بہاولنگر: فورٹ عباس میں پولیس کی جرائم پیشہ افراد کے خلاف کارروائیاں</p><p>بہاولنگر: 5 ملزمان گرفتار، ملزمان کے قبضہ سے اڑھائی کلو سے زائد چرس، اسلحہ ناجائز برآمد، ترجمان پولیس</p><p>بہاولنگر: مقدمات درج، مزید قانونی کارروائی جاری، ترجمان پولیس</p><p>بہاولنگر: کاروائیاں تھانہ فورٹ عباس، مروٹ اور کھچی والا میں کی گئیں، ترجمان پولیس</p><p>بہاولنگر: منشیات فروش معاشرے کا ناسور ہیں، کسی رعایت کے مستحق نہیں، ڈی پی او</p><p>بہاولنگر: عوام کی جان و مال کا تحفظ پولیس کی اولین ترجیح ہے، ڈی پی او محمد عمران</p><p style="color:#ffcc00;font-weight:900;">ترجمان پولیس بہاولنگر</p></div><div style="font-size:11px;color:#8aa0b8;margin:0 12px 12px;">14 اکتوبر 2026 - STAR 9Z NEWS TV</div></div>`;
+updateDateTime();
+setInterval(updateDateTime,1000);
 
-const feeds = [
-    { name: "پاکستان", url: "https://news.google.com/rss/search?q=Pakistan%20news&hl=en-PK&gl=PK&ceid=PK:en", gridId: "grid-pakistan", countId: "count-pak" },
-    { name: "دنیا", url: "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en&gl=US&ceid=US:en", gridId: "grid-world", countId: "count-world" },
-    { name: "بہاولنگر", url: "https://news.google.com/rss/search?q=Bahawalnagar&hl=en-PK&gl=PK&ceid=PK:en", gridId: "grid-bahawalnagar", countId: "count-bah", pinned: true }
-];
 
-async function loadRSS(feed){
- try{
-  const api = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`;
-  const res = await fetch(api); const data = await res.json();
-  if(data.status === 'ok' && data.items.length > 0){
-   document.getElementById(feed.countId).innerText = data.items.length + " خبریں - Auto Live";
-   let cards = data.items.slice(0,5).map(item=>{
-    let title = item.title.length>95? item.title.substring(0,95)+'...' : item.title;
-    let desc = item.description? item.description.replace(/<[^>]*>/g,'').substring(0,110)+'...' : '';
-    let img = item.enclosure && item.enclosure.link? item.enclosure.link : 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600';
-    let link = item.link;
-    return `<div class="news-card" onclick="window.open('${link}','_blank')"><img src="${img}" loading="lazy"><span class="lbl">${feed.name}</span><h3>${title}</h3><p>${desc}</p></div>`;
-   }).join('');
-   if(feed.pinned){ document.getElementById(feed.gridId).innerHTML = pinNews + cards; } else { document.getElementById(feed.gridId).innerHTML = cards; }
+/* =====================================
+   IMAGE PREVIEW
+===================================== */
+
+function setupImagePreview(inputId,previewId,nameId){
+ const input = document.getElementById(inputId);
+
+ input.addEventListener("change",function(){
+  const file = this.files && this.files[0];
+  const preview = document.getElementById(previewId);
+  const name = document.getElementById(nameId);
+
+  if(!file){
+   preview.style.display="none";
+   name.textContent="";
    return;
   }
- }catch(e){}
- if(feed.pinned){ document.getElementById(feed.gridId).innerHTML = pinNews; document.getElementById(feed.countId).innerText = "LIVE PIN"; }
+
+  if(!file.type.startsWith("image/")){
+   alert("براہ کرم تصویر منتخب کریں۔");
+   this.value="";
+   preview.style.display="none";
+   return;
+  }
+
+  if(file.size > 8*1024*1024){
+   alert("فائل 8 MB سے چھوٹی منتخب کریں۔");
+   this.value="";
+   preview.style.display="none";
+   name.textContent="";
+   return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(event){
+   preview.src=event.target.result;
+   preview.style.display="block";
+   name.textContent=file.name;
+  };
+
+  reader.readAsDataURL(file);
+ });
 }
 
-function init(){
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
-  document.getElementById('grid-bahawalnagar').innerHTML = pinNews;
-  feeds.forEach(f => loadRSS(f));
-  setInterval(()=>{feeds.forEach(f => loadRSS(f))}, 600000);
-}
-init();
+setupImagePreview("p1","prev1","nm1");
+setupImagePreview("p2","prev2","nm2");
 
-function sendWA(){
-let a=document.getElementById('n1').value.trim(),b=document.getElementById('n2').value.trim(),c=document.getElementById('n3').value.trim(),d=document.getElementById('n4').value,e=document.getElementById('n5').value.trim(),f=document.getElementById('n6').value.trim(),g=document.getElementById('n7').value.trim(),h=document.getElementById('n8').value.trim();
-let gen=document.querySelector('input[name="gender"]:checked').value;
-let p1=document.getElementById('p1').files[0],p2=document.getElementById('p2').files[0];
-let err=document.getElementById('err'),ok=document.getElementById('ok');
-if(!a||!b||!c||!e||!f||!g||!h){err.style.display='block';err.innerText='⚠️ تمام فیلڈز لازمی ہیں';return;}
-if(!p1){err.style.display='block';err.innerText='⚠️ تصویر لازمی';return;}
-if(!p2){err.style.display='block';err.innerText='⚠️ سکرین شاٹ لازمی';return;}
-err.style.display='none';
-let txt=`*STAR 9Z NEWS TV - درخواست*\n*نام:* ${a}\n*والد:* ${b}\n*جنس:* ${gen}\n*جگہ:* ${c}\n*عہدہ:* ${d}\n*موبائل:* ${e}\n*تعلیم:* ${f}\n*تجربہ:* ${g}\n*TID:* ${h}`;
-ok.style.display='block';
-window.location.href="https://wa.me/923227030993?text="+encodeURIComponent(txt);
+
+/* =====================================
+   NEWS FEEDS
+   External RSS access may be unavailable
+   on some hosting platforms.
+===================================== */
+
+const feeds = [
+ {
+  name:"پاکستان",
+  url:"https://news.google.com/rss/search?q=Pakistan%20news&hl=en-PK&gl=PK&ceid=PK:en",
+  gridId:"grid-pakistan",
+  countId:"count-pak"
+ },
+ {
+  name:"دنیا",
+  url:"https://news.google.com/rss/headlines/section/topic/WORLD?hl=en&gl=US&ceid=US:en",
+  gridId:"grid-world",
+  countId:"count-world"
+ },
+ {
+  name:"بہاولنگر",
+  url:"https://news.google.com/rss/search?q=Bahawalnagar&hl=en-PK&gl=PK&ceid=PK:en",
+  gridId:"grid-bahawalnagar",
+  countId:"count-bah"
+ }
+];
+
+const fallbackImage =
+ "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600";
+
+function escapeHTML(value){
+ return String(value || "").replace(/[&<>"']/g,function(ch){
+  return {
+   "&":"&amp;",
+   "<":"&lt;",
+   ">":"&gt;",
+   '"':"&quot;",
+   "'":"&#39;"
+  }[ch];
+ });
 }
+
+function getNewsImage(item){
+ if(item.enclosure && item.enclosure.link){
+  return item.enclosure.link;
+ }
+
+ const html = item.description || "";
+ const match = html.match(/<img[^>]+src=["']([^"']+)/i);
+
+ return match ? match[1] : fallbackImage;
+}
+
+async function loadRSS(feed){
+ const grid = document.getElementById(feed.gridId);
+ const count = document.getElementById(feed.countId);
+
+ try{
+  const api =
+   "https://api.rss2json.com/v1/api.json?rss_url=" +
+   encodeURIComponent(feed.url);
+
+  const response = await fetch(api);
+  if(!response.ok) throw new Error("News feed unavailable");
+
+  const data = await response.json();
+
+  if(data.status !== "ok" || !data.items || !data.items.length){
+   throw new Error("No news available");
+  }
+
+  const articles = data.items.slice(0,6);
+
+  grid.innerHTML = articles.map(function(item){
+   const title = escapeHTML(item.title);
+   const description = escapeHTML(
+    (item.description || "").replace(/<[^>]*>/g,"").slice(0,180)
+   );
+   const image = getNewsImage(item);
+   const link = item.link || "#";
+
+   return `
+    <article class="news-card">
+     <a href="${escapeHTML(link)}"
+        target="_blank" rel="noopener noreferrer"
+        style="color:inherit;text-decoration:none">
+      <img src="${escapeHTML(image)}"
+           alt="${title}"
+           loading="lazy"
+           onerror="this.onerror=null;this.src='${fallbackImage}'">
+
+      <span class="lbl">${escapeHTML(feed.name)}</span>
+
+      <h3>${title}</h3>
+      <p>${description}</p>
+     </a>
+    </article>
+   `;
+  }).join("");
+
+  count.textContent=articles.length+" خبریں";
+
+ }catch(error){
+  count.textContent="نیوز فیڈ دستیاب نہیں";
+
+  if(!grid.children.length){
+   grid.innerHTML=`
+    <article class="news-card">
+     <span class="lbl">${escapeHTML(feed.name)}</span>
+     <h3>خبریں عارضی طور پر دستیاب نہیں</h3>
+     <p>
+      انٹرنیٹ کنکشن چیک کریں یا بعد میں دوبارہ کوشش کریں۔
+      تازہ خبروں کی فراہمی بیرونی نیوز فیڈ پر منحصر ہے۔
+     </p>
+    </article>
+   `;
+  }
+ }
+}
+
+function loadAllNews(){
+ feeds.forEach(function(feed){
+  loadRSS(feed);
+ });
+}
+
+loadAllNews();
+setInterval(loadAllNews,600000);
+
+
+/* =====================================
+   REPRESENTATIVE APPLICATION
+===================================== */
+
+document.getElementById("representativeForm")
+ .addEventListener("submit",function(event){
+
+ event.preventDefault();
+
+ const error = document.getElementById("err");
+
+ const name = document.getElementById("n1").value.trim();
+ const father = document.getElementById("n2").value.trim();
+ const city = document.getElementById("n3").value.trim();
+ const designation = document.getElementById("n4").value;
+ const mobile = document.getElementById("n5").value.trim();
+ const education = document.getElementById("n6").value.trim();
+ const experience = document.getElementById("n7").value.trim();
+ const transaction = document.getElementById("n8").value.trim();
+
+ const genderElement =
+  document.querySelector('input[name="gender"]:checked');
+
+ const photo = document.getElementById("p1").files[0];
+ const paymentScreenshot = document.getElementById("p2").files[0];
+
+ if(!name || !father || !city || !mobile ||
+    !education || !experience || !transaction ||
+    !photo || !paymentScreenshot){
+
+  error.style.display="block";
+  error.textContent="براہ کرم تمام ضروری معلومات اور دونوں تصاویر منتخب کریں۔";
+  return;
+ }
+
+ if(photo.size > 8*1024*1024 ||
+    paymentScreenshot.size > 8*1024*1024){
+
+  error.style.display="block";
+  error.textContent="دونوں تصاویر 8 MB سے چھوٹی ہونی چاہئیں۔";
+  return;
+ }
+
+ const message =
+  "*STAR 9Z NEWS TV — نمائندہ درخواست*\n\n"+
+  "*نام:* "+name+"\n"+
+  "*والد کا نام:* "+father+"\n"+
+  "*جنس:* "+genderElement.value+"\n"+
+  "*شہر/ضلع:* "+city+"\n"+
+  "*عہدہ:* "+designation+"\n"+
+  "*موبائل:* "+mobile+"\n"+
+  "*تعلیم:* "+education+"\n"+
+  "*تجربہ:* "+experience+"\n"+
+  "*Transaction ID:* "+transaction+"\n\n"+
+  "تصویر اور ادائیگی کا اسکرین شاٹ WhatsApp میں الگ سے منسلک کریں۔\n"+
+  "درخواست کی تصدیق چینل کی جانب سے کی جائے گی۔";
+
+ error.style.display="block";
+ error.style.color="#006b35";
+ error.textContent=
+  "WhatsApp کھلنے کے بعد اپنی تصویر اور ادائیگی کا اسکرین شاٹ بھی منسلک کریں۔";
+
+ const whatsappURL =
+  "https://wa.me/923227030993?text="+encodeURIComponent(message);
+
+ window.open(whatsappURL,"_blank","noopener");
+});
 </script>
+
 </body>
-  </html>
+</html>
