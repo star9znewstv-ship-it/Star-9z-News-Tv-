@@ -167,7 +167,64 @@ err.style.display='none';
 let txt=`*STAR 9Z NEWS TV - درخواست*\n*نام:* ${a}\n*والد:* ${b}\n*جنس:* ${gen}\n*جگہ:* ${c}\n*عہدہ:* ${d}\n*موبائل:* ${e}\n*تعلیم:* ${f}\n*تجربہ:* ${g}\n*TID:* ${h}`;
 ok.style.display='block';
 window.location.href="https://wa.me/923227030993?text="+encodeURIComponent(txt);
+}<script>
+// یہ ٹائم ہمیشہ چلے گا - 100% گارنٹی
+function startClock(){
+  var badge = document.getElementById('autoDateBadge');
+  var bText = document.getElementById('breakingText');
+  var marq = document.getElementById('autoMarq');
+  if(!badge) return;
+  
+  function tick(){
+    var now = new Date();
+    var d = now.getDate();
+    var m = now.getMonth()+1;
+    var y = now.getFullYear();
+    var h = now.getHours();
+    var min = now.getMinutes();
+    var s = now.getSeconds();
+    if(min<10) min="0"+min;
+    if(s<10) s="0"+s;
+    var ampm = h>=12 ? "PM" : "AM";
+    h = h%12; h=h?h:12;
+    
+    var full = d+"/"+m+"/"+y+" - "+h+":"+min+":"+s+" "+ampm;
+    
+    badge.innerHTML = "● LIVE HD - "+full+" - CEO Muhammad Iftikhar";
+    if(bText) bText.innerHTML = "STAR 9Z NEWS TV — "+full+" | بہاولنگر فورٹ عباس میں 5 منشیات فروش گرفتار | Easypaisa: 03223449924 |";
+    if(marq) marq.innerHTML = full+" - بہاولنگر فورٹ عباس کارروائی - 5 گرفتار | Easypaisa: 03223449924 | WhatsApp: 03227030993 |";
+  }
+  tick();
+  setInterval(tick, 1000);
 }
+
+// خبر ہمیشہ پہلے دکھاؤ، پھر RSS لوڈ کرو
+function showPinnedNewsFirst(){
+  var pin = `<div class="news-card" style="border:3px solid #ffcc00;background:#1e3a5f;display:block !important;">
+  <img src="https://images.unsplash.com/photo-1580130775562-0ef92da028de?w=600">
+  <span class="lbl" style="background:#ffcc00;color:#000;">STAR 9Z NEWS TV - بیورو چیف عرفان قادر - LIVE</span>
+  <h3 style="color:#ffcc00;">بہاولنگر سے رپورٹ کر رہے ہیں اسٹار 9 زی نیوز کے بیورو چیف عرفان قادر</h3>
+  <div style="margin:0 12px 12px;color:#fff;line-height:2.2;font-family:'Noto Nastaliq Urdu',serif;">
+  <p>بہاولنگر: فورٹ عباس میں پولیس کی بڑی کارروائی - 5 ملزمان گرفتار</p>
+  <p>بہاولنگر: اڑھائی کلو سے زائد چرس، اسلحہ ناجائز برآمد - ترجمان پولیس</p>
+  <p>بہاولنگر: کاروائیاں تھانہ فورٹ عباس، مروٹ اور کھچی والا میں - DPO محمد عمران</p>
+  <p style="color:#ffcc00;font-weight:900;">ترجمان پولیس بہاولنگر</p></div></div>`;
+
+  var bahGrid = document.getElementById('grid-bahawalnagar');
+  if(bahGrid){
+    bahGrid.innerHTML = pin; // پہلے آپ کی خبر لازمی دکھاؤ
+  }
+}
+
+// پیج لوڈ ہوتے ہی چلاؤ
+window.onload = function(){
+  showPinnedNewsFirst();
+  startClock();
+};
+// فوراً بھی چلاؤ
+showPinnedNewsFirst();
+startClock();
+</script>
 </script>
 </body>
 </html>
