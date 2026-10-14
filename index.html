@@ -18,7 +18,7 @@ body{background:#040a12;color:#fff;font-family:system-ui}
 @keyframes logoFloat{0%,100%{transform:perspective(600px) rotateY(-10deg) translateY(0)}50%{transform:perspective(600px) rotateY(10deg) translateY(-10px)}}
 .slogo{font-size:48px;font-weight:900;color:#fff;text-shadow:2px 4px 0 #e51d2a,0 0 30px #168bff;letter-spacing:2px}
 .tag{margin-top:8px;color:#e8edf5;letter-spacing:4px;font-size:13px;font-weight:700}
-.live-badge{z-index:5;margin-top:18px;background:linear-gradient(90deg,#e51d2a,#9a0000);border:2px solid #ffcc00;padding:8px 26px;border-radius:50px;font-weight:900;font-size:13px;box-shadow:0 0 20px #e51d2a}
+.live-badge{z-index:5;margin-top:18px;background:linear-gradient(90deg,#e51d2a,#9a0000);border:2px solid #ffcc00;padding:8px 26px;border-radius:50px;font-weight:900;font-size:13px;box-shadow:0 0 20px #e51d2a; text-align:center;}
 .s9z-breaking{display:flex;align-items:center;background:#fff;color:#111;overflow:hidden;min-height:46px;border-bottom:3px solid #e51d2a}
 .s9z-breaking strong{background:#e51d2a;color:#fff;padding:14px 14px;white-space:nowrap;z-index:1}
 .s9z-breaking-track{overflow:hidden;flex:1;white-space:nowrap}
@@ -58,56 +58,105 @@ input,select,textarea{width:100%;padding:12px;border:1.6px solid #aaa;border-rad
 </style>
 </head>
 <body>
-<div class="header-main"><div class="globe"></div><div class="logo-main"><div class="slogo">★ STAR 9Z NEWS TV ★</div><div class="tag">TRUTH | NEWS | PEOPLE</div><div style="margin-top:10px;font-size:38px;font-weight:900;background:linear-gradient(#fff,#ffcc00);-webkit-background-clip:text;-webkit-text-fill-color:transparent">STAR 9Z NEWS HD TV</div></div><div class="live-badge" id="autoDateBadge">● LIVE HD - لوڈ ہو رہا ہے...</div></div>
-<div class="s9z-breaking"><strong>BREAKING NEWS</strong><div class="s9z-breaking-track"><div class="s9z-breaking-text" id="breakingText">STAR 9Z NEWS TV — تازہ ترین خبریں لوڈ ہو رہی ہیں |</div></div></div>
-<div class="ticker-red"><div class="marq-red" id="autoMarq">پاکستان بھر سے نمائندگان کی ضرورت ہے | Male اور Female دونوں | تصویر + Easypaisa سکرین شاٹ لازمی | Easypaisa: 03223449924 پر 1000 روپے بھیجیں | WhatsApp: 03227030993 |</div></div>
+
+<div class="header-main">
+  <div class="globe"></div>
+  <div class="logo-main">
+    <div class="slogo">★ STAR 9Z NEWS TV ★</div>
+    <div class="tag">TRUTH | NEWS | PEOPLE</div>
+    <div style="margin-top:10px;font-size:38px;font-weight:900;background:linear-gradient(#fff,#ffcc00);-webkit-background-clip:text;-webkit-text-fill-color:transparent">STAR 9Z NEWS HD TV</div>
+  </div>
+  <div class="live-badge" id="autoDateBadge">● LIVE - لوڈ ہو رہا ہے...</div>
+  <div id="autoTimeBadge" style="z-index:5;margin-top:10px;background:#000;color:#ffcc00;border:1px solid #ffcc00;padding:6px 20px;border-radius:20px;font-weight:900;font-size:14px;">Time Loading...</div>
+</div>
+
+<div class="s9z-breaking"><strong>BREAKING NEWS</strong><div class="s9z-breaking-track"><div class="s9z-breaking-text" id="breakingText">STAR 9Z NEWS TV — تازہ ترین خبریں |</div></div></div>
+<div class="ticker-red"><div class="marq-red" id="autoMarq">پاکستان بھر سے نمائندگان کی ضرورت ہے | Easypaisa: 03223449924 پر 1000 روپے بھیجیں | WhatsApp: 03227030993 |</div></div>
+
 <div class="wrap">
-<h2 class="section-title">🇵🇰 پاکستان - لائیو <span id="count-pak">لوڈ ہو رہا ہے</span></h2><div class="news-grid" id="grid-pakistan"></div>
-<h2 class="section-title">🌍 دنیا - لائیو <span id="count-world">لوڈ ہو رہا ہے</span></h2><div class="news-grid" id="grid-world"></div>
-<h2 class="section-title">📍 بہاولنگر - لائیو <span id="count-bah">لوڈ ہو رہا ہے</span></h2><div class="news-grid" id="grid-bahawalnagar"></div>
+<h2 class="section-title">📍 بہاولنگر - لائیو <span id="count-bah">تازہ ترین</span></h2>
+<div class="news-grid" id="grid-bahawalnagar"></div>
+
+<h2 class="section-title">🇵🇰 پاکستان - لائیو <span id="count-pak">لوڈ ہو رہا ہے</span></h2>
+<div class="news-grid" id="grid-pakistan"></div>
+
+<h2 class="section-title">🌍 دنیا - لائیو <span id="count-world">لوڈ ہو رہا ہے</span></h2>
+<div class="news-grid" id="grid-world"></div>
+
 <div class="form-wrap"><div class="form-head">پاکستان بھر سے نمائندگان کی ضرورت ہے<small>Male & Female دونوں - تصویر لازمی</small><span class="fee">💰 Easypaisa: 03223449924 - Fees Rs.1000</span><small style="color:#ffcc00">Account Title: Muhammad Iftikhar</small></div><div class="fbody"><label>پورا نام *</label><input id="n1"><label>والد کا نام *</label><input id="n2"><label>جنس *</label><div class="radio"><label><input type="radio" name="gender" value="Male" checked> Male مرد</label><label><input type="radio" name="gender" value="Female"> Female خاتون</label></div><label>جگہ / ضلع / شہر *</label><input id="n3" placeholder="بہاولنگر، لاہور"><label>عہدہ *</label><select id="n4"><option>Bureau Chief</option><option>District Bureau Chief</option><option>Tehsil Bureau Chief</option><option>Crime Reporter</option><option>City Reporter</option><option>District Reporter</option><option>Anchor Person</option><option>Sub Editor</option><option>Cameraman</option><option>Correspondent</option></select><label>1. اپنی تصویر اپلوڈ کریں *</label><div class="upload" onclick="document.getElementById('p1').click()"><div>📸 تصویر منتخب کریں</div><img id="prev1"><div id="nm1" style="font-size:11px;color:#666"></div><input type="file" id="p1" accept="image/*" hidden onchange="show(this,'prev1','nm1')"></div><label>2. Easypaisa 1000 روپے کا سکرین شاٹ *</label><div class="upload" style="border-color:#00a651;background:#f0fff4" onclick="document.getElementById('p2').click()"><div style="color:#006400;font-weight:900">💰 پیمنٹ سکرین شاٹ</div><img id="prev2"><div id="nm2" style="font-size:11px;color:#666"></div><input type="file" id="p2" accept="image/*" hidden onchange="show(this,'prev2','nm2')"><div style="font-size:11px;color:#006400">Easypaisa: 03223449924 پر 1000 بھیج کر سکرین شاٹ لیں</div></div><label>موبائل *</label><input id="n5" type="tel"><label>تعلیم *</label><input id="n6"><label>تجربہ *</label><textarea id="n7" rows="3"></textarea><label>Easypaisa Transaction ID *</label><input id="n8" placeholder="TID: 1234567890"><div style="background:#fff8d6;border:1px solid #ffcc00;border-radius:10px;padding:10px;margin-top:12px;font-size:12px;color:#664d03"><b>طریقہ:</b> 1. 03223449924 پر 1000 بھیجیں 2. سکرین شاٹ لیں 3. TID لکھیں 4. Submit کریں - WhatsApp پر تصویر Attach کریں</div><button type="button" class="btn btn-pay" onclick="openEP()">💰 Easypaisa کھولیں - 03223449924 پر 1000 بھیجیں</button><button type="button" class="btn" onclick="sendWA()">📱 سارا ڈیٹا WhatsApp پر بھیجیں - 03227030993</button><p id="ok" style="display:none;color:green;text-align:center;font-weight:900;margin-top:12px">✅ WhatsApp کھل رہا ہے - تصویریں Attach کریں</p><p id="err" style="display:none;color:red;text-align:center;font-weight:700;margin-top:10px;font-size:13px"></p></div></div>
+
 <div class="management"><h2>STAR 9Z NEWS TV — Management</h2><p><b>MUHAMMAD IFTIKHAR</b></p><p>Chief Executive Officer (CEO) - S/o Zulfiqar</p><p><b>RAUF AHMAD</b></p><p>Chief Operating Officer (COO)</p><p><b>MUHAMMAD SHAFIQ</b></p><p>Director</p><p style="margin-top:12px">WhatsApp: 03227030993 | Easypaisa: 03223449924 | Email: star9znewstv@gmail.com</p></div>
 <div class="contact"><a class="wa" href="https://wa.me/923227030993" target="_blank">📱 WhatsApp رابطہ - 03227030993</a><a class="ep" href="tel:03223449924">💰 EasyPaisa - 03223449924 (Fees 1000)</a></div>
 </div>
 <div class="footer">STAR 9Z NEWS TV | TRUTH • NEWS • PEOPLE<br>Owner: CEO Muhammad Iftikhar S/o Zulfiqar | PVD-STAR9Z-2026-1009<br>© 2026 STAR 9Z NEWS TV</div>
+
 <script>
 function show(input, prev, nm){ if(input.files && input.files[0]){ let r=new FileReader(); r.onload=function(e){let img=document.getElementById(prev);img.src=e.target.result;img.style.display='block';document.getElementById(nm).innerText=input.files[0].name} r.readAsDataURL(input.files[0]); } }
 function openEP(){alert('Easypaisa: 03223449924 - 1000 Rs - Title: Muhammad Iftikhar');window.open('https://wa.me/923223449924?text=Assalam%20o%20Alaikum%20EasyPaisa%201000%20bheja%20hai','_blank');}
-function updateAutoDate(){
-  try{
-    let now = new Date();
-    let day = now.getDate();
-    let month = now.toLocaleString('en-US', {month: 'long'});
-    let year = now.getFullYear();
-    let timeStr = now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true});
-    let fullDate = day + " " + month + " " + year + " - " + timeStr;
-    document.getElementById('autoDateBadge').innerText = "● LIVE HD - " + fullDate + " - CEO Muhammad Iftikhar - PVD-STAR9Z-2026-1009";
-    document.getElementById('breakingText').innerText = "STAR 9Z NEWS TV — " + fullDate + " کی تازہ ترین خبریں | بہاولنگر فورٹ عباس میں 5 منشیات فروش گرفتار | Easypaisa: 03223449924 | WhatsApp: 03227030993 |";
-    document.getElementById('autoMarq').innerText = fullDate + " - بہاولنگر: فورٹ عباس میں پولیس کی بڑی کارروائی، 5 ملزمان گرفتار | پاکستان بھر سے نمائندگان کی ضرورت ہے | Easypaisa: 03223449924 پر 1000 بھیجیں |";
-  }catch(e){
-    document.getElementById('autoDateBadge').innerText = "● LIVE HD - " + new Date().toString();
-  }
-}
-updateAutoDate(); setInterval(updateAutoDate, 1000);
 
-const pinBahawalnagarNews = `<div class="news-card" style="border:2px solid #ffcc00;background:linear-gradient(180deg,#1e3a5f,#101e30);"><img src="https://images.unsplash.com/photo-1580130775562-0ef92da028de?w=600"><span class="lbl" style="background:#ffcc00;color:#000;">STAR 9Z NEWS TV - بیورو چیف عرفان قادر</span><h3>بہاولنگر سے رپورٹ کر رہے ہیں اسٹار 9 زی نیوز کے بیورو چیف عرفان قادر - فورٹ عباس میں پولیس کی بڑی کارروائی</h3><div style="margin:0 12px 12px;color:#e8f0ff;font-size:14px;line-height:2.2;font-family:'Noto Nastaliq Urdu',serif;"><p>بہاولنگر: 5 ملزمان گرفتار، اڑھائی کلو سے زائد چرس، اسلحہ ناجائز برآمد، ترجمان پولیس</p><p>بہاولنگر: مقدمات درج، مزید قانونی کارروائی جاری، ترجمان پولیس</p><p>بہاولنگر: کاروائیاں تھانہ فورٹ عباس، مروٹ اور کھچی والا میں کی گئیں</p><p>بہاولنگر: منشیات فروش معاشرے کا ناسور ہیں، کسی رعایت کے مستحق نہیں، ڈی پی او</p><p>بہاولنگر: عوام کی جان و مال کا تحفظ پولیس کی اولین ترجیح ہے، ڈی پی او محمد عمران</p><p style="color:#ffcc00;font-weight:900;">ترجمان پولیس بہاولنگر</p></div><div style="font-size:11px;color:#8aa0b8;margin:0 12px 12px;">14 Oct 2026 - STAR 9Z NEWS TV</div></div>`;
+// ===== تاریخ اور ٹائم 100% فکس - ہر موبائل پر چلے گا =====
+function updateDateTime(){
+  var now = new Date();
+  var days = ["اتوار","پیر","منگل","بدھ","جمعرات","جمعہ","ہفتہ"];
+  var months = ["جنوری","فروری","مارچ","اپریل","مئی","جون","جولائی","اگست","ستمبر","اکتوبر","نومبر","دسمبر"];
+
+  var dayName = days[now.getDay()];
+  var date = now.getDate();
+  var monthName = months[now.getMonth()];
+  var year = now.getFullYear();
+
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+  var ampm = hours >= 12? "شام" : "صبح";
+  hours = hours % 12;
+  hours = hours? hours : 12;
+  minutes = minutes < 10? "0" + minutes : minutes;
+  seconds = seconds < 10? "0" + seconds : seconds;
+
+  var dateStr = dayName + "، " + date + " " + monthName + " " + year;
+  var timeStr = hours + ":" + minutes + ":" + seconds + " " + ampm;
+  var fullStr = dateStr + " - " + timeStr;
+
+  document.getElementById("autoDateBadge").innerHTML = "● LIVE HD - " + dateStr + " - CEO Muhammad Iftikhar";
+  document.getElementById("autoTimeBadge").innerHTML = "⏰ ٹائم: " + timeStr + " - " + dateStr;
+  document.getElementById("breakingText").innerHTML = "STAR 9Z NEWS TV — " + fullStr + " | بہاولنگر فورٹ عباس میں 5 منشیات فروش گرفتار | Easypaisa: 03223449924 | WhatsApp: 03227030993 |";
+  document.getElementById("autoMarq").innerHTML = fullStr + " - بہاولنگر: فورٹ عباس میں پولیس کی بڑی کارروائی | پاکستان بھر سے نمائندگان کی ضرورت ہے | Easypaisa: 03223449924 پر 1000 بھیجیں |";
+}
+updateDateTime();
+setInterval(updateDateTime, 1000);
+
+// ===== آپ کی بھیجی ہوئی خبر - PIN =====
+const pinBahawalnagarNews = `
+<div class="news-card" style="border:3px solid #ffcc00;background:linear-gradient(180deg,#1e3a5f,#101e30);box-shadow:0 0 25px rgba(255,204,0,0.4);">
+<img src="https://images.unsplash.com/photo-1580130775562-0ef92da028de?w=600" alt="Police" onerror="this.src='https://via.placeholder.com/400x250?text=STAR+9Z+NEWS'">
+<span class="lbl" style="background:#ffcc00;color:#000;font-size:12px;">BAHAWALNAGAR - بیورو چیف عرفان قادر - STAR 9Z NEWS TV</span>
+<h3 style="font-size:20px;color:#ffcc00;">بہاولنگر سے رپورٹ کر رہے ہیں اسٹار 9 زی نیوز کے بیورو چیف عرفان قادر</h3>
+<div style="margin:0 12px 12px;color:#ffffff;font-size:15px;line-height:2.4;font-family:'Noto Nastaliq Urdu',serif;">
+<p>بہاولنگر: فورٹ عباس میں پولیس کی جرائم پیشہ افراد کے خلاف کارروائیاں</p>
+<p>بہاولنگر: 5 ملزمان گرفتار، ملزمان کے قبضہ سے اڑھائی کلو سے زائد چرس، اسلحہ ناجائز برآمد، ترجمان پولیس</p>
+<p>بہاولنگر: مقدمات درج، مزید قانونی کارروائی جاری، ترجمان پولیس</p>
+<p>بہاولنگر: کاروائیاں تھانہ فورٹ عباس، مروٹ اور کھچی والا میں کی گئیں، ترجمان پولیس</p>
+<p>بہاولنگر: منشیات فروش معاشرے کا ناسور ہیں، کسی رعایت کے مستحق نہیں، ڈی پی او</p>
+<p>بہاولنگر: عوام کی جان و مال کا تحفظ پولیس کی اولین ترجیح ہے، ڈی پی او محمد عمران</p>
+<p style="color:#ffcc00;font-weight:900;margin-top:10px;font-size:16px;">ترجمان پولیس بہاولنگر</p>
+</div>
+<div style="font-size:11px;color:#8aa0b8;margin:0 12px 12px;">14 اکتوبر 2026 - STAR 9Z NEWS TV - CEO Muhammad Iftikhar</div>
+</div>
+`;
 
 const newsFeeds = [
     { name: "پاکستان", category: "pakistan", url: "https://news.google.com/rss/search?q=Pakistan%20news&hl=en-PK&gl=PK&ceid=PK:en", gridId: "grid-pakistan", countId: "count-pak" },
     { name: "دنیا", category: "world", url: "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en&gl=US&ceid=US:en", gridId: "grid-world", countId: "count-world" },
     { name: "بہاولنگر", category: "bahawalnagar", url: "https://news.google.com/rss/search?q=Bahawalnagar%20Pakistan&hl=en-PK&gl=PK&ceid=PK:en", gridId: "grid-bahawalnagar", countId: "count-bah" }
 ];
-const fallbackNews = [
-{t:"پاکستان نے فتح-2 ہائپر سونک میزائل کا کامیاب تجربہ کر لیا",c:"PAKISTAN",i:"https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=600",d:"14 Oct 2026"},
-{t:"پٹرول 2.71 روپے سستا",c:"BUSINESS",i:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600",d:"14 Oct 2026"},
-{t:"کھاٹھاں میں دوہرے قتل کا معاملہ حل",c:"BAHAWALNAGAR",i:"https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600",d:"14 Oct 2026"}
-];
+
 async function loadRSS(feed){
  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`;
  try{
   const res = await fetch(apiUrl); const data = await res.json();
   if(data.status === 'ok' && data.items && data.items.length > 0){
-   document.getElementById(feed.countId).innerText = `${data.items.length} خبریں - Auto`;
+   document.getElementById(feed.countId).innerText = `${data.items.length} خبریں - Auto Live`;
    let cards = data.items.slice(0,5).map(item=>{
     let title = item.title.length>95?item.title.substring(0,95)+'...' : item.title;
     let desc = item.description?item.description.replace(/<[^>]*>/g,'').substring(0,110)+'...' : 'تفصیل کے لیے کلک کریں';
@@ -119,12 +168,17 @@ async function loadRSS(feed){
    return;
   } throw new Error('empty');
  }catch(e){
-  document.getElementById(feed.countId).innerText = 'آف لائن';
-  if(feed.category === 'bahawalnagar'){ document.getElementById(feed.gridId).innerHTML = pinBahawalnagarNews + fallbackNews.map(n=>`<div class="news-card"><img src="${n.i}"><span class="lbl">${n.c}</span><h3>${n.t}</h3><p>${n.d}</p></div>`).join(''); } else { document.getElementById(feed.gridId).innerHTML = fallbackNews.map(n=>`<div class="news-card"><img src="${n.i}"><span class="lbl">${n.c}</span><h3>${n.t}</h3><p>${n.d}</p></div>`).join(''); }
+  document.getElementById(feed.countId).innerText = 'تازہ ترین';
+  if(feed.category === 'bahawalnagar'){
+    document.getElementById(feed.gridId).innerHTML = pinBahawalnagarNews;
+  } else {
+    document.getElementById(feed.gridId).innerHTML = `<div class="news-card"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600"><span class="lbl">${feed.name}</span><h3>تازہ ترین خبریں لوڈ ہو رہی ہیں...</h3></div>`;
+  }
  }
 }
 newsFeeds.forEach(feed => loadRSS(feed));
 setInterval(()=>{newsFeeds.forEach(feed => loadRSS(feed))}, 600000);
+
 function sendWA(){
 let a=document.getElementById('n1').value.trim(),b=document.getElementById('n2').value.trim(),c=document.getElementById('n3').value.trim(),d=document.getElementById('n4').value,e=document.getElementById('n5').value.trim(),f=document.getElementById('n6').value.trim(),g=document.getElementById('n7').value.trim(),h=document.getElementById('n8').value.trim();
 let genEl=document.querySelector('input[name="gender"]:checked');let gen=genEl?genEl.value:"Male";
@@ -141,4 +195,4 @@ setTimeout(()=>{window.location.href=waUrl;},300);
 }
 </script>
 </body>
-</html>
+                                                                                                                                    </html>
