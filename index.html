@@ -74,14 +74,24 @@ input,select,textarea{width:100%;padding:12px;border:1.6px solid #aaa;border-rad
 function show(input, prev, nm){ if(input.files && input.files[0]){ let r=new FileReader(); r.onload=function(e){let img=document.getElementById(prev);img.src=e.target.result;img.style.display='block';document.getElementById(nm).innerText=input.files[0].name} r.readAsDataURL(input.files[0]); } }
 function openEP(){alert('Easypaisa: 03223449924 - 1000 Rs - Title: Muhammad Iftikhar');window.open('https://wa.me/923223449924?text=Assalam%20o%20Alaikum%20EasyPaisa%201000%20bheja%20hai','_blank');}
 function updateAutoDate(){
-  let now = new Date();
-  let dateStr = now.toLocaleDateString('ur-PK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-  let timeStr = now.toLocaleTimeString('ur-PK', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-  document.getElementById('autoDateBadge').innerText = `● LIVE HD - ${dateStr} - ${timeStr} - CEO Muhammad Iftikhar`;
-  document.getElementById('breakingText').innerText = `STAR 9Z NEWS TV — ${dateStr} ${timeStr} کی تازہ ترین خبریں | Easypaisa: 03223449924 | WhatsApp: 03227030993 |`;
-  document.getElementById('autoMarq').innerText = `${dateStr} - پاکستان بھر سے نمائندگان کی ضرورت ہے | Male Female دونوں | Easypaisa: 03223449924 پر 1000 بھیجیں | WhatsApp: 03227030993 |`;
+  try{
+    let now = new Date();
+    let day = now.getDate();
+    let month = now.toLocaleString('en-US', {month: 'long'});
+    let year = now.getFullYear();
+    let timeStr = now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true});
+    let fullDate = day + " " + month + " " + year + " - " + timeStr;
+    document.getElementById('autoDateBadge').innerText = "● LIVE HD - " + fullDate + " - CEO Muhammad Iftikhar - PVD-STAR9Z-2026-1009";
+    document.getElementById('breakingText').innerText = "STAR 9Z NEWS TV — " + fullDate + " کی تازہ ترین خبریں | بہاولنگر فورٹ عباس میں 5 منشیات فروش گرفتار | Easypaisa: 03223449924 | WhatsApp: 03227030993 |";
+    document.getElementById('autoMarq').innerText = fullDate + " - بہاولنگر: فورٹ عباس میں پولیس کی بڑی کارروائی، 5 ملزمان گرفتار | پاکستان بھر سے نمائندگان کی ضرورت ہے | Easypaisa: 03223449924 پر 1000 بھیجیں |";
+  }catch(e){
+    document.getElementById('autoDateBadge').innerText = "● LIVE HD - " + new Date().toString();
+  }
 }
 updateAutoDate(); setInterval(updateAutoDate, 1000);
+
+const pinBahawalnagarNews = `<div class="news-card" style="border:2px solid #ffcc00;background:linear-gradient(180deg,#1e3a5f,#101e30);"><img src="https://images.unsplash.com/photo-1580130775562-0ef92da028de?w=600"><span class="lbl" style="background:#ffcc00;color:#000;">STAR 9Z NEWS TV - بیورو چیف عرفان قادر</span><h3>بہاولنگر سے رپورٹ کر رہے ہیں اسٹار 9 زی نیوز کے بیورو چیف عرفان قادر - فورٹ عباس میں پولیس کی بڑی کارروائی</h3><div style="margin:0 12px 12px;color:#e8f0ff;font-size:14px;line-height:2.2;font-family:'Noto Nastaliq Urdu',serif;"><p>بہاولنگر: 5 ملزمان گرفتار، اڑھائی کلو سے زائد چرس، اسلحہ ناجائز برآمد، ترجمان پولیس</p><p>بہاولنگر: مقدمات درج، مزید قانونی کارروائی جاری، ترجمان پولیس</p><p>بہاولنگر: کاروائیاں تھانہ فورٹ عباس، مروٹ اور کھچی والا میں کی گئیں</p><p>بہاولنگر: منشیات فروش معاشرے کا ناسور ہیں، کسی رعایت کے مستحق نہیں، ڈی پی او</p><p>بہاولنگر: عوام کی جان و مال کا تحفظ پولیس کی اولین ترجیح ہے، ڈی پی او محمد عمران</p><p style="color:#ffcc00;font-weight:900;">ترجمان پولیس بہاولنگر</p></div><div style="font-size:11px;color:#8aa0b8;margin:0 12px 12px;">14 Oct 2026 - STAR 9Z NEWS TV</div></div>`;
+
 const newsFeeds = [
     { name: "پاکستان", category: "pakistan", url: "https://news.google.com/rss/search?q=Pakistan%20news&hl=en-PK&gl=PK&ceid=PK:en", gridId: "grid-pakistan", countId: "count-pak" },
     { name: "دنیا", category: "world", url: "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en&gl=US&ceid=US:en", gridId: "grid-world", countId: "count-world" },
@@ -98,17 +108,19 @@ async function loadRSS(feed){
   const res = await fetch(apiUrl); const data = await res.json();
   if(data.status === 'ok' && data.items && data.items.length > 0){
    document.getElementById(feed.countId).innerText = `${data.items.length} خبریں - Auto`;
-   document.getElementById(feed.gridId).innerHTML = data.items.slice(0,6).map(item=>{
+   let cards = data.items.slice(0,5).map(item=>{
     let title = item.title.length>95?item.title.substring(0,95)+'...' : item.title;
     let desc = item.description?item.description.replace(/<[^>]*>/g,'').substring(0,110)+'...' : 'تفصیل کے لیے کلک کریں';
     let img = item.enclosure && item.enclosure.link?item.enclosure.link:'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600';
     let link = item.link;
     return `<div class="news-card" onclick="window.open('${link}','_blank')"><img src="${img}" loading="lazy"><span class="lbl">${feed.name}</span><h3>${title}</h3><p>${desc}</p></div>`;
-   }).join(''); return;
+   }).join('');
+   if(feed.category === 'bahawalnagar'){ document.getElementById(feed.gridId).innerHTML = pinBahawalnagarNews + cards; } else { document.getElementById(feed.gridId).innerHTML = cards; }
+   return;
   } throw new Error('empty');
  }catch(e){
   document.getElementById(feed.countId).innerText = 'آف لائن';
-  document.getElementById(feed.gridId).innerHTML = fallbackNews.map(n=>`<div class="news-card"><img src="${n.i}"><span class="lbl">${n.c}</span><h3>${n.t}</h3><p>${n.d}</p></div>`).join('');
+  if(feed.category === 'bahawalnagar'){ document.getElementById(feed.gridId).innerHTML = pinBahawalnagarNews + fallbackNews.map(n=>`<div class="news-card"><img src="${n.i}"><span class="lbl">${n.c}</span><h3>${n.t}</h3><p>${n.d}</p></div>`).join(''); } else { document.getElementById(feed.gridId).innerHTML = fallbackNews.map(n=>`<div class="news-card"><img src="${n.i}"><span class="lbl">${n.c}</span><h3>${n.t}</h3><p>${n.d}</p></div>`).join(''); }
  }
 }
 newsFeeds.forEach(feed => loadRSS(feed));
@@ -129,4 +141,4 @@ setTimeout(()=>{window.location.href=waUrl;},300);
 }
 </script>
 </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </html>
+                                                                                                                                                                                                                                                     </html>
