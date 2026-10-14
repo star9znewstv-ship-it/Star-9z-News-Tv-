@@ -58,21 +58,47 @@ input,select,textarea{width:100%;padding:12px;border:1.6px solid #aaa;border-rad
 </style>
 </head>
 <body>
-<div class="header-main"><div class="globe"></div><div class="logo-main"><div class="slogo">★ STAR 9Z NEWS TV ★</div><div class="tag">TRUTH | NEWS | PEOPLE</div><div style="margin-top:10px;font-size:38px;font-weight:900;background:linear-gradient(#fff,#ffcc00);-webkit-background-clip:text;-webkit-text-fill-color:transparent">STAR 9Z NEWS HD TV</div></div><div class="live-badge">● LIVE HD - 14 OCT 2026 - CEO Muhammad Iftikhar - PVD-STAR9Z-2026-1009</div></div>
-<div class="s9z-breaking"><strong>BREAKING NEWS</strong><div class="s9z-breaking-track"><div class="s9z-breaking-text" id="breakingText">STAR 9Z NEWS TV — پاکستان، دنیا اور بہاولنگر کی تازہ ترین خبریں | Easypaisa: 03223449924 | WhatsApp: 03227030993 |</div></div></div>
-<div class="ticker-red"><div class="marq-red">پاکستان بھر سے نمائندگان کی ضرورت ہے | Male اور Female دونوں | تصویر + Easypaisa سکرین شاٹ لازمی | Easypaisa: 03223449924 پر 1000 روپے بھیجیں | WhatsApp: 03227030993 |</div></div>
+<div class="header-main"><div class="globe"></div><div class="logo-main"><div class="slogo">★ STAR 9Z NEWS TV ★</div><div class="tag">TRUTH | NEWS | PEOPLE</div><div style="margin-top:10px;font-size:38px;font-weight:900;background:linear-gradient(#fff,#ffcc00);-webkit-background-clip:text;-webkit-text-fill-color:transparent">STAR 9Z NEWS HD TV</div></div>
+<div class="live-badge" id="autoDateBadge">● LIVE HD - لوڈ ہو رہا ہے...</div>
+</div>
+
+<div class="s9z-breaking"><strong>BREAKING NEWS</strong><div class="s9z-breaking-track"><div class="s9z-breaking-text" id="breakingText">STAR 9Z NEWS TV — تازہ ترین خبریں لوڈ ہو رہی ہیں |</div></div></div>
+
+<div class="ticker-red"><div class="marq-red" id="autoMarq">پاکستان بھر سے نمائندگان کی ضرورت ہے | Male اور Female دونوں | تصویر + Easypaisa سکرین شاٹ لازمی | Easypaisa: 03223449924 پر 1000 روپے بھیجیں | WhatsApp: 03227030993 |</div></div>
+
 <div class="wrap">
 <h2 class="section-title">🇵🇰 پاکستان - لائیو <span id="count-pak">لوڈ ہو رہا ہے</span></h2><div class="news-grid" id="grid-pakistan"></div>
 <h2 class="section-title">🌍 دنیا - لائیو <span id="count-world">لوڈ ہو رہا ہے</span></h2><div class="news-grid" id="grid-world"></div>
 <h2 class="section-title">📍 بہاولنگر - لائیو <span id="count-bah">لوڈ ہو رہا ہے</span></h2><div class="news-grid" id="grid-bahawalnagar"></div>
+
 <div class="form-wrap"><div class="form-head">پاکستان بھر سے نمائندگان کی ضرورت ہے<small>Male & Female دونوں - تصویر لازمی</small><span class="fee">💰 Easypaisa: 03223449924 - Fees Rs.1000</span><small style="color:#ffcc00">Account Title: Muhammad Iftikhar</small></div><div class="fbody"><label>پورا نام *</label><input id="n1"><label>والد کا نام *</label><input id="n2"><label>جنس *</label><div class="radio"><label><input type="radio" name="gender" value="Male" checked> Male مرد</label><label><input type="radio" name="gender" value="Female"> Female خاتون</label></div><label>جگہ / ضلع / شہر *</label><input id="n3" placeholder="بہاولنگر، لاہور"><label>عہدہ *</label><select id="n4"><option>Bureau Chief</option><option>District Bureau Chief</option><option>Tehsil Bureau Chief</option><option>Crime Reporter</option><option>City Reporter</option><option>District Reporter</option><option>Anchor Person</option><option>Sub Editor</option><option>Cameraman</option><option>Correspondent</option></select><label>1. اپنی تصویر اپلوڈ کریں *</label><div class="upload" onclick="document.getElementById('p1').click()"><div>📸 تصویر منتخب کریں</div><img id="prev1"><div id="nm1" style="font-size:11px;color:#666"></div><input type="file" id="p1" accept="image/*" hidden onchange="show(this,'prev1','nm1')"></div><label>2. Easypaisa 1000 روپے کا سکرین شاٹ *</label><div class="upload" style="border-color:#00a651;background:#f0fff4" onclick="document.getElementById('p2').click()"><div style="color:#006400;font-weight:900">💰 پیمنٹ سکرین شاٹ</div><img id="prev2"><div id="nm2" style="font-size:11px;color:#666"></div><input type="file" id="p2" accept="image/*" hidden onchange="show(this,'prev2','nm2')"><div style="font-size:11px;color:#006400">Easypaisa: 03223449924 پر 1000 بھیج کر سکرین شاٹ لیں</div></div><label>موبائل *</label><input id="n5" type="tel"><label>تعلیم *</label><input id="n6"><label>تجربہ *</label><textarea id="n7" rows="3"></textarea><label>Easypaisa Transaction ID *</label><input id="n8" placeholder="TID: 1234567890"><div style="background:#fff8d6;border:1px solid #ffcc00;border-radius:10px;padding:10px;margin-top:12px;font-size:12px;color:#664d03"><b>طریقہ:</b> 1. 03223449924 پر 1000 بھیجیں 2. سکرین شاٹ لیں 3. TID لکھیں 4. Submit کریں - WhatsApp پر تصویر Attach کریں</div><button type="button" class="btn btn-pay" onclick="openEP()">💰 Easypaisa کھولیں - 03223449924 پر 1000 بھیجیں</button><button type="button" class="btn" onclick="sendWA()">📱 سارا ڈیٹا WhatsApp پر بھیجیں - 03227030993</button><p id="ok" style="display:none;color:green;text-align:center;font-weight:900;margin-top:12px">✅ WhatsApp کھل رہا ہے - تصویریں Attach کریں</p><p id="err" style="display:none;color:red;text-align:center;font-weight:700;margin-top:10px;font-size:13px"></p></div></div>
+
 <div class="management"><h2>STAR 9Z NEWS TV — Management</h2><p><b>MUHAMMAD IFTIKHAR</b></p><p>Chief Executive Officer (CEO) - S/o Zulfiqar</p><p><b>RAUF AHMAD</b></p><p>Chief Operating Officer (COO)</p><p><b>MUHAMMAD SHAFIQ</b></p><p>Director</p><p style="margin-top:12px">WhatsApp: 03227030993 | Easypaisa: 03223449924 | Email: star9znewstv@gmail.com</p></div>
 <div class="contact"><a class="wa" href="https://wa.me/923227030993" target="_blank">📱 WhatsApp رابطہ - 03227030993</a><a class="ep" href="tel:03223449924">💰 EasyPaisa - 03223449924 (Fees 1000)</a></div>
 </div>
+
 <div class="footer">STAR 9Z NEWS TV | TRUTH • NEWS • PEOPLE<br>Owner: CEO Muhammad Iftikhar S/o Zulfiqar | PVD-STAR9Z-2026-1009<br>© 2026 STAR 9Z NEWS TV - Easypaisa: 03223449924 | WhatsApp: 03227030993</div>
+
 <script>
 function show(input, prev, nm){ if(input.files && input.files[0]){ let r=new FileReader(); r.onload=function(e){let img=document.getElementById(prev);img.src=e.target.result;img.style.display='block';document.getElementById(nm).innerText=input.files[0].name} r.readAsDataURL(input.files[0]); } }
 function openEP(){alert('Easypaisa:\nNumber: 03223449924\nAmount: 1000\nTitle: Muhammad Iftikhar');window.open('https://wa.me/923223449924?text=Assalam%20o%20Alaikum%20EasyPaisa%201000%20bheja%20hai','_blank');}
+
+// ===== AUTO DATE SYSTEM - روزانہ خود بدلنے والا =====
+function updateAutoDate(){
+  let now = new Date();
+  let dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  let dateStr = now.toLocaleDateString('ur-PK', dateOptions);
+  let timeStr = now.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit' });
+  // اوپر LIVE BADGE میں
+  document.getElementById('autoDateBadge').innerText = `● LIVE HD - ${dateStr} - ${timeStr} - CEO Muhammad Iftikhar - PVD-STAR9Z-2026-1009`;
+  // BREAKING میں
+  document.getElementById('breakingText').innerText = `STAR 9Z NEWS TV — ${dateStr} کی تازہ ترین خبریں | پاکستان نے فتح-2 ہائپر سونک میزائل کا کامیاب تجربہ کیا | پٹرول سستا | Easypaisa: 03223449924 | WhatsApp: 03227030993 |`;
+  // لال پٹی میں بھی تاریخ
+  document.getElementById('autoMarq').innerText = `${dateStr} - پاکستان بھر سے نمائندگان کی ضرورت ہے | Male اور Female دونوں | تصویر + Easypaisa سکرین شاٹ لازمی | Easypaisa: 03223449924 پر 1000 روپے بھیجیں | WhatsApp: 03227030993 |`;
+}
+updateAutoDate();
+setInterval(updateAutoDate, 60000); // ہر 1 منٹ بعد خود اپڈیٹ
+
 const newsFeeds = [
     { name: "پاکستان", category: "pakistan", url: "https://news.google.com/rss/search?q=Pakistan%20news&hl=en-PK&gl=PK&ceid=PK:en", gridId: "grid-pakistan", countId: "count-pak" },
     { name: "دنیا", category: "world", url: "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en&gl=US&ceid=US:en", gridId: "grid-world", countId: "count-world" },
@@ -89,7 +115,7 @@ async function loadRSS(feed){
  try{
   const res = await fetch(apiUrl); const data = await res.json();
   if(data.status === 'ok' && data.items && data.items.length > 0){
-   document.getElementById(feed.countId).innerText = `${data.items.length} خبریں`;
+   document.getElementById(feed.countId).innerText = `${data.items.length} خبریں - Auto`;
    document.getElementById(feed.gridId).innerHTML = data.items.slice(0,6).map(item=>{
     let title = item.title.length>95?item.title.substring(0,95)+'...' : item.title;
     let desc = item.description?item.description.replace(/<[^>]*>/g,'').substring(0,110)+'...' : 'تفصیل کے لیے کلک کریں';
@@ -97,7 +123,6 @@ async function loadRSS(feed){
     let link = item.link;
     return `<div class="news-card" onclick="window.open('${link}','_blank')"><img src="${img}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250?text=STAR+9Z'"><span class="lbl">${feed.name}</span><h3>${title}</h3><p>${desc}</p></div>`;
    }).join('');
-   if(feed.category==='pakistan'){ document.getElementById('breakingText').innerText = `🔴 ${data.items[0].title} | ` + document.getElementById('breakingText').innerText; }
    return;
   }
   throw new Error('empty');
@@ -108,6 +133,7 @@ async function loadRSS(feed){
 }
 newsFeeds.forEach(feed => loadRSS(feed));
 setInterval(()=>{newsFeeds.forEach(feed => loadRSS(feed))}, 600000);
+
 function sendWA(){
 let a=document.getElementById('n1').value.trim(),b=document.getElementById('n2').value.trim(),c=document.getElementById('n3').value.trim(),d=document.getElementById('n4').value,e=document.getElementById('n5').value.trim(),f=document.getElementById('n6').value.trim(),g=document.getElementById('n7').value.trim(),h=document.getElementById('n8').value.trim();
 let genEl=document.querySelector('input[name="gender"]:checked');let gen=genEl?genEl.value:"Male";
@@ -137,4 +163,4 @@ setTimeout(()=>{window.location.href=waUrl;},300);
 }
 </script>
 </body>
-</html>
+                                                                                                                                                                                                                                                           </html>
