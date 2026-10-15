@@ -3,1124 +3,1093 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071426">
 
-<title>STAR 9Z NEWS TV | Truth • News • People</title>
+<title>STAR 9Z NEWS TV | The Voice of Truth</title>
 
-<meta name="description" content="STAR 9Z NEWS TV — Pakistan, World and Bahawalnagar News. Truth | News | People.">
+<meta name="description"
+content="STAR 9Z NEWS TV - Pakistan, World News and Representative Registration">
 
 <style>
-:root{
-  --navy:#071426;
-  --navy2:#102b4c;
-  --red:#e50920;
-  --gold:#f5c451;
-  --white:#ffffff;
-  --muted:#cbd5e1;
-  --panel:#10243b;
-  --border:rgba(255,255,255,.12);
+* {
+  box-sizing: border-box;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,"Noto Nastaliq Urdu",sans-serif;
-  background:#08111f;
-  color:#fff;
-}
-a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-.container{width:min(1200px,94%);margin:auto}
 
-/* Top information bar */
-.topbar{
-  background:#030914;
-  border-bottom:1px solid var(--border);
-  padding:9px 0;
-  font-size:13px;
+body {
+  margin: 0;
+  font-family: Arial, "Noto Nastaliq Urdu", sans-serif;
+  background: #07111f;
+  color: #fff;
+  direction: ltr;
 }
-.topbar-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.live-clock{color:var(--gold);font-weight:bold}
-.top-links{display:flex;gap:14px;flex-wrap:wrap}
 
-/* Header */
-header{
-  background:linear-gradient(120deg,#071426,#10355b,#071426);
-  border-bottom:3px solid var(--red);
-  overflow:hidden;
+:root {
+  --red: #e50925;
+  --navy: #07111f;
+  --blue: #102746;
+  --gold: #e6bd67;
+  --white: #ffffff;
 }
-.brand{
-  display:flex;
-  align-items:center;
-  gap:17px;
-  padding:20px 0;
+
+.topbar {
+  background: #030912;
+  color: #fff;
+  padding: 9px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  border-bottom: 1px solid #263a55;
 }
-.globe{
-  flex:0 0 82px;
-  width:82px;height:82px;
-  border-radius:50%;
+
+.brand {
+  text-align: center;
+  padding: 23px 10px;
   background:
-    radial-gradient(circle at 30% 25%,#fff 0%,#70d7ff 8%,#1478bc 38%,#061d52 75%);
-  border:3px solid #e5f6ff;
-  box-shadow:0 0 22px #198cff80,inset -10px -8px 20px #0008;
-  position:relative;
-  overflow:hidden;
-}
-.globe:before{
-  content:"";
-  position:absolute;
-  inset:-10px;
-  border:2px solid #a7edff;
-  border-radius:40%;
-  transform:rotate(-28deg);
-  animation:spin 8s linear infinite;
-}
-.globe:after{
-  content:"";
-  position:absolute;
-  width:35px;height:82px;
-  border:2px solid #9deaff;
-  border-radius:50%;
-  left:20px;top:-3px;
-}
-@keyframes spin{to{transform:rotate(332deg)}}
-.brand h1{
-  font-size:clamp(27px,5vw,48px);
-  margin:0;
-  letter-spacing:1px;
-  line-height:1.12;
-  font-weight:900;
-  text-shadow:0 3px 12px #0009;
-}
-.brand h1 span{color:var(--red)}
-.tagline{
-  color:#e9eef6;
-  letter-spacing:3px;
-  font-size:12px;
-  margin-top:8px;
+    radial-gradient(circle at top, #1b4268 0%, #081426 55%, #030812 100%);
+  border-bottom: 3px solid var(--red);
 }
 
-/* Navigation */
-nav{background:#0c1d31;border-top:1px solid var(--border)}
-.nav-inner{display:flex;gap:5px;flex-wrap:wrap}
-nav a{
-  padding:13px 14px;
-  display:block;
-  font-size:14px;
-  font-weight:bold;
-}
-nav a:hover{background:var(--red)}
-
-/* Tickers */
-.ticker{
-  display:flex;
-  align-items:stretch;
-  background:#fff;
-  color:#111;
-  overflow:hidden;
-  min-height:43px;
-}
-.ticker-label{
-  background:var(--red);
-  color:#fff;
-  padding:12px 15px;
-  white-space:nowrap;
-  font-size:13px;
-  font-weight:900;
-  z-index:1;
-}
-.ticker-track{overflow:hidden;flex:1;display:flex;align-items:center}
-.ticker-text{
-  display:inline-block;
-  white-space:nowrap;
-  padding-left:100%;
-  animation:marquee 28s linear infinite;
-  font-size:14px;
-  font-weight:bold;
-}
-@keyframes marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-100%)}
-}
-.breaking .ticker-label{background:#b90017}
-.breaking .ticker-text{color:#b90017}
-
-/* Main */
-main{padding:22px 0 40px}
-.section-heading{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin:25px 0 15px;
-  border-bottom:2px solid var(--red);
-  padding-bottom:9px;
-}
-.section-heading h2{margin:0;font-size:23px}
-.section-heading small{color:var(--muted)}
-.hero-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:18px;
-}
-.hero-card,.side-card,.news-card,.panel{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:10px;
-  overflow:hidden;
-}
-.hero-card img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  display:block;
-  background:#152a41;
-}
-.hero-content{padding:18px}
-.category{
-  display:inline-block;
-  background:var(--red);
-  padding:5px 9px;
-  border-radius:3px;
-  font-size:12px;
-  font-weight:bold;
-  margin-bottom:9px;
-}
-.hero-content h2{margin:3px 0 10px;font-size:25px;line-height:1.5}
-.hero-content p,.news-card p{color:#d0dae6;line-height:1.8}
-.news-meta{font-size:12px;color:#a9b8ca;margin-top:10px}
-.side-list{display:grid;gap:12px}
-.side-card{display:grid;grid-template-columns:115px 1fr;min-height:110px}
-.side-card img{width:115px;height:100%;min-height:110px;object-fit:cover}
-.side-card div{padding:10px}
-.side-card h3{font-size:15px;line-height:1.6;margin:0}
-.side-card p{font-size:12px;color:var(--muted);line-height:1.6}
-
-/* News cards */
-.news-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:16px;
-}
-.news-card img{
-  width:100%;
-  height:185px;
-  object-fit:cover;
-  background:#182c42;
-  display:block;
-}
-.news-card-content{padding:14px}
-.news-card h3{margin:5px 0 9px;line-height:1.7;font-size:18px}
-.news-card p{font-size:14px}
-.news-card a.read-more{
-  display:inline-block;
-  background:var(--red);
-  padding:8px 12px;
-  border-radius:4px;
-  font-size:13px;
-  font-weight:bold;
-}
-.status-message{
-  background:#132940;
-  color:#dbeafe;
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:15px;
-  line-height:1.8;
-  margin:12px 0;
-}
-.error-note{color:#ffd5d5}
-.loading{color:#d9e5f5;padding:14px}
-
-/* Representative form */
-.form-layout{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:18px;
-  align-items:start;
-}
-.panel{padding:20px}
-.panel h2,.panel h3{margin-top:0}
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:13px;
-}
-.field{display:flex;flex-direction:column;gap:7px}
-.field.full{grid-column:1/-1}
-.field label{font-size:14px;color:#e3edf8}
-.field input,.field select,.field textarea{
-  width:100%;
-  background:#071426;
-  color:white;
-  border:1px solid #40546d;
-  border-radius:6px;
-  padding:12px;
-  outline:none;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  border-color:#50b9ff;
-}
-.field input[type=file]{padding:9px}
-.preview{
-  display:none;
-  max-width:180px;
-  max-height:160px;
-  margin-top:8px;
-  border-radius:7px;
-  border:1px solid var(--border);
-}
-.btn{
-  border:0;
-  border-radius:6px;
-  background:var(--red);
-  color:#fff;
-  padding:13px 17px;
-  font-weight:bold;
-}
-.btn:hover{filter:brightness(1.12)}
-.btn-secondary{background:#164c76}
-.form-note{font-size:13px;color:#c8d5e4;line-height:1.8}
-.payment-box{
-  background:#071426;
-  border:1px solid #334d68;
-  border-radius:8px;
-  padding:15px;
-  line-height:2;
-  margin:12px 0;
-}
-.copy-btn{
-  border:1px solid #6c829a;
-  background:#17314c;
-  color:white;
-  border-radius:4px;
-  padding:6px 10px;
-  margin-left:7px;
-}
-.contact-button{
-  display:block;
-  text-align:center;
-  margin-top:10px;
-  background:#138b53;
-  padding:12px;
-  border-radius:6px;
-  font-weight:bold;
+.logo {
+  display: inline-block;
+  font-size: clamp(28px, 6vw, 52px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 0 16px rgba(230,189,103,.25);
 }
 
-/* Footer */
-footer{
-  background:#030914;
-  border-top:3px solid var(--red);
-  padding:28px 0 18px;
+.logo span {
+  color: var(--red);
 }
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:25px;
-}
-footer h3{margin-top:0}
-footer p,footer li{color:#c3cedb;line-height:1.9;font-size:14px}
-footer ul{padding-left:18px}
-.copyright{
-  text-align:center;
-  border-top:1px solid var(--border);
-  margin-top:22px;
-  padding-top:17px;
-  color:#98a8bc;
-  font-size:12px;
-}
-#notice{
-  display:none;
-  margin-top:14px;
-  padding:12px;
-  border-radius:6px;
-  background:#173b30;
-  line-height:1.7;
-  overflow-wrap:anywhere;
-}
-@media(max-width:800px){
-  .hero-grid,.form-layout{grid-template-columns:1fr}
-  .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hero-card img{height:240px}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:520px){
-  .brand{gap:12px;padding:16px 0}
-  .globe{width:60px;height:60px;flex-basis:60px}
-  .globe:after{height:60px;left:13px}
-  .tagline{font-size:9px;letter-spacing:1.5px}
-  nav a{padding:11px 9px;font-size:12px}
-  .news-grid{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
-  .field.full{grid-column:auto}
-  .side-card{grid-template-columns:100px 1fr}
-  .side-card img{width:100px}
-  .footer-grid{grid-template-columns:1fr}
-  .hero-content h2{font-size:21px}
-  .section-heading h2{font-size:20px}
-}
-</style>
-</head>
 
-<body>
+.tagline {
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin-top: 7px;
+}
+
+.live-label {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  padding: 6px 13px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 13px;
+}
+
+nav {
+  background: #0d1c31;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #263a55;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 15px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  background: var(--red);
+}
+
+.breaking {
+  display: flex;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+  min-height: 43px;
+  align-items: stretch;
+}
+
+.breaking-title {
+  background: var(--red);
+  color: white;
+  font-weight: bold;
+  padding: 12px 14px;
+  white-space: nowrap;
+}
+
+.breaking-content {
+  flex: 1;
+  overflow: hidden;
+  padding: 12px 0;
+  white-space: nowrap;
+}
+
+.breaking-content span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: ticker 28s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.container {
+  width: min(1150px, 94%);
+  margin: 24px auto;
+}
+
+.hero {
+  padding: 28px 20px;
+  border: 1px solid #263a55;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #112b4a, #080f1d);
+  text-align: center;
+}
+
+.hero h1 {
+  margin-top: 0;
+  font-size: clamp(25px, 5vw, 42px);
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: #d7e0ed;
+  line-height: 1.9;
+}
+
+.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 18px;
+  margin: 7px 4px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button-red {
+  background: var(--red);
+  color: white;
+}
+
+.button-gold {
+  background: var(--gold);
+  color: #111;
+}
+
+.section-title {
+  font-size: 24px;
+  border-left: 5px solid var(--red);
+  padding: 7px 12px;
+  margin: 0 0 18px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #0d1c31;
+  border: 1px solid #263a55;
+  border-radius: 10px;
+  padding: 18px;
+  line-height: 1.8;
+}
+
+.card h3 {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.news-section {
+  margin-top: 30px;
+}
+
+.news-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.news-tab {
+  padding: 10px 14px;
+  background: #142843;
+  color: white;
+  border: 1px solid #344a65;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.news-tab.active {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.news-item {
+  background: #0d1c31;
+  border: 1px solid #263a55;
+  border-radius: 9px;
+  padding: 16px;
+}
+
+.news-item h3 {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-top: 0;
+}
+
+.news-item a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.news-meta {
+  color: #a9bbd0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.status {
+  color: #cbd6e5;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.form-box {
+  background: #0d1c31;
+  border: 1px solid #344a65;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.form-box label {
+  display: block;
+  margin: 13px 0 6px;
+  color: #f1f5fa;
+  font-size: 14px;
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #3b506b;
+  border-radius: 6px;
+  background: #07111f;
+  color: white;
+  font-size: 15px;
+}
+
+.form-box textarea {
+  min-height: 95px;
+  resize: vertical;
+}
+
+.form-box small {
+  color: #b7c6d9;
+  line-height: 1.8;
+}
+
+.payment-box {
+  background: #091728;
+  border: 1px dashed var(--gold);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 18px 0;
+  line-height: 2;
+}
+
+.management {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 15px;
+}
+
+.manager {
+  text-align: center;
+  background: #0d1c31;
+  border: 1px solid #344a65;
+  border-top: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 20px 12px;
+}
+
+.manager h3 {
+  margin-bottom: 8px;
+}
+
+.manager p {
+  color: var(--gold);
+  margin-bottom: 0;
+}
+
+.notice {
+  padding: 15px;
+  background: #2a1d0c;
+  border: 1px solid #8e6b2e;
+  border-radius: 7px;
+  color: #ffedc5;
+  line-height: 1.9;
+  margin: 18px 0;
+}
+
+footer {
+  background: #030912;
+  border-top: 3px solid var(--red);
+  text-align: center;
+  padding: 28px 15px;
+  color: #cbd6e5;
+  line-height: 2;
+  margin-top: 35px;
+}
+
+footer strong {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    padding: 11px 9px;
+    font-size: 12px;
+  }
+
+  .topbar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .form-box {
+    padding: 15px;
+  }
+}
+</style><body>
 
 <div class="topbar">
-  <div class="container topbar-inner">
-    <div>
-      <span id="pakDate">پاکستان کی تاریخ لوڈ ہو رہی ہے...</span>
-      &nbsp; | &nbsp;
-      <span class="live-clock" id="pakClock">00:00:00</span>
-      <span class="live-clock"> PKT</span>
-    </div>
-    <div class="top-links">
-      <a href="#latest">تازہ خبریں</a>
-      <a href="#representative">نمائندہ بنیں</a>
-      <a href="#contact">رابطہ کریں</a>
-    </div>
-  </div>
+  <div>🔴 STAR 9Z NEWS TV</div>
+  <div id="pakDate">تاریخ لوڈ ہو رہی ہے...</div>
+  <div id="pakClock">وقت لوڈ ہو رہا ہے...</div>
 </div>
 
-<header>
-  <div class="container brand">
-    <div class="globe" aria-label="Animated globe"></div>
-    <div>
-      <h1>STAR <span>9Z</span> NEWS TV</h1>
-      <div class="tagline">TRUTH | NEWS | PEOPLE</div>
-      <div style="margin-top:8px;font-size:13px;color:#d7e8ff">
-        پاکستان، دنیا اور آپ کے شہر کی خبریں
-      </div>
-    </div>
-  </div>
+<header class="brand">
+  <div class="logo">STAR <span>9Z</span> NEWS TV</div>
+  <div class="tagline">TRUTH | NEWS | PEOPLE</div>
+  <div class="live-label">● DIGITAL NEWS NETWORK</div>
 </header>
 
 <nav>
-  <div class="container nav-inner">
-    <a href="#home">ہوم</a>
-    <a href="#pakistan">پاکستان</a>
-    <a href="#world">دنیا</a>
-    <a href="#bahawalnagar">بہاولنگر</a>
-    <a href="#latest">تازہ خبریں</a>
-    <a href="#representative">نمائندہ بنیں</a>
-    <a href="#contact">رابطہ</a>
-  </div>
+  <a href="#home">Home</a>
+  <a href="#pakistan">Pakistan</a>
+  <a href="#world">World</a>
+  <a href="#latest">Latest News</a>
+  <a href="#join">Join Our Team</a>
+  <a href="#management">Management</a>
 </nav>
 
-<div class="ticker breaking">
-  <div class="ticker-label">🔴 BREAKING NEWS</div>
-  <div class="ticker-track">
-    <div class="ticker-text" id="breakingText">
-      STAR 9Z NEWS TV — اہم خبروں کے لیے ہماری ویب سائٹ ملاحظہ کرتے رہیں۔
-    </div>
+<div class="breaking">
+  <div class="breaking-title">🔴 BREAKING NEWS</div>
+  <div class="breaking-content">
+    <span id="tickerText">
+      STAR 9Z NEWS TV — پاکستان اور دنیا کی خبروں کے لیے ہمارے ساتھ رہیے۔
+    </span>
   </div>
 </div>
 
-<div class="ticker" style="background:#10243b;color:#fff">
-  <div class="ticker-label" style="background:#f5c451;color:#071426">LATEST</div>
-  <div class="ticker-track">
-    <div class="ticker-text" id="latestTicker">
-      پاکستان، دنیا اور بہاولنگر کی تازہ خبریں یہاں دیکھیے۔
-    </div>
+<main class="container">
+
+<section class="hero" id="home">
+  <h1>Welcome to <span>STAR 9Z NEWS TV</span></h1>
+
+  <p>
+    The Voice of Truth — پاکستان، دنیا اور آپ کے علاقے کی خبروں کے لیے
+    ہمارا ڈیجیٹل نیوز نیٹ ورک۔
+  </p>
+
+  <a class="button button-red" href="#latest">LATEST NEWS</a>
+  <a class="button button-gold" href="#join">BECOME A REPRESENTATIVE</a>
+</section>
+
+<section class="news-section" id="latest">
+  <h2 class="section-title">Latest News | تازہ خبریں</h2>
+
+  <div class="news-tabs">
+    <button class="news-tab active" onclick="showNews('all', this)">
+      All News
+    </button>
+
+    <button class="news-tab" onclick="showNews('pakistan', this)">
+      Pakistan
+    </button>
+
+    <button class="news-tab" onclick="showNews('world', this)">
+      World
+    </button>
   </div>
-</div>
 
-<main id="home" class="container">
-
-  <div class="section-heading">
-    <h2>اہم خبریں | TOP STORIES</h2>
-    <small id="newsStatus">خبریں لوڈ کی جا رہی ہیں...</small>
+  <div id="newsStatus" class="status">
+    انٹرنیٹ سے تازہ خبریں حاصل کی جا رہی ہیں...
   </div>
 
-  <section class="hero-grid">
-    <article class="hero-card">
-      <img id="heroImage"
-        src="https://placehold.co/900x500/10243b/ffffff?text=STAR+9Z+NEWS"
-        alt="STAR 9Z NEWS top story">
-      <div class="hero-content">
-        <span class="category">TOP STORY</span>
-        <h2 id="heroTitle">STAR 9Z NEWS TV میں خوش آمدید</h2>
-        <p id="heroDescription">
-          پاکستان، دنیا اور بہاولنگر کی خبروں کے لیے STAR 9Z NEWS TV کے ساتھ رہیے۔
-        </p>
-        <div class="news-meta" id="heroMeta">STAR 9Z NEWS TV</div>
-      </div>
+  <div id="newsGrid" class="news-grid">
+    <article class="news-item">
+      <h3>تازہ خبریں لوڈ ہو رہی ہیں</h3>
+      <p class="news-meta">
+        نیوز فیڈ لوڈ ہونے کے بعد یہاں خبریں ظاہر ہوں گی۔
+      </p>
     </article>
+  </div>
 
-    <div>
-      <div class="section-heading" style="margin-top:0">
-        <h2 style="font-size:19px">تازہ سرخیاں</h2>
-      </div>
-      <div class="side-list" id="topStories">
-        <div class="status-message">خبریں لوڈ کی جا رہی ہیں...</div>
-      </div>
+  <p class="news-meta">
+    خبریں متعلقہ نیوز ذرائع سے حاصل ہوں گی۔ خبر کی مکمل تفصیل کے لیے
+    اس کے اصل ماخذ کا لنک کھولیں۔
+  </p>
+</section>
+
+<section class="news-section" id="pakistan">
+  <h2 class="section-title">Pakistan News | پاکستان کی خبریں</h2>
+  <div id="pakistanNews" class="news-grid">
+    <div class="card">پاکستان کی نیوز فیڈ لوڈ ہو رہی ہے...</div>
+  </div>
+</section>
+
+<section class="news-section" id="world">
+  <h2 class="section-title">World News | عالمی خبریں</h2>
+  <div id="worldNews" class="news-grid">
+    <div class="card">عالمی نیوز فیڈ لوڈ ہو رہی ہے...</div>
+  </div>
+</section>
+
+<section class="news-section" id="join">
+  <h2 class="section-title">
+    نمائندگان کی ضرورت — Male & Female Representatives Required
+  </h2>
+
+  <div class="card">
+    <h3>📢 STAR 9Z NEWS TV میں شمولیت اختیار کریں</h3>
+
+    <p dir="rtl">
+      اسٹار 9Z نیوز ٹی وی کو پاکستان بھر سے مرد اور خواتین،
+      دونوں قسم کے ایماندار، باہمت اور باصلاحیت نمائندگان کی ضرورت ہے۔
+      صحافت کا شوق رکھنے والے افراد اپنے شہر، تحصیل اور ضلع کی آواز بننے
+      کے لیے درخواست دے سکتے ہیں۔
+    </p>
+
+    <p dir="rtl">
+      امیدوار اپنی مکمل معلومات، سابقہ صحافتی تجربہ، تصاویر اور
+      رجسٹریشن فیس کی ادائیگی کا ثبوت فارم میں درج کریں۔
+      درخواست بھیجنے سے پہلے تمام معلومات کی درستگی یقینی بنائیں۔
+    </p>
+
+    <p>
+      <strong>Required:</strong>
+      Male and Female Representatives
+    </p>
+
+    <p>
+      <strong>Registration Fee:</strong> Rs. 1,000
+    </p>
+  </div>
+
+  <div class="notice" dir="rtl">
+    <strong>اہم ہدایت:</strong>
+    رجسٹریشن فیس ادا کرنے سے پہلے چینل کی انتظامیہ سے فیس، ذمہ داریوں،
+    تقرری اور نمائندگی کی شرائط کی تصدیق کر لیں۔
+    درخواست جمع کروانا تقرری کی ضمانت نہیں ہے۔
+  </div>
+
+  <form class="form-box" id="representativeForm">
+
+    <h3>Representative Registration Form</h3>
+
+    <label for="fullName">Full Name / مکمل نام *</label>
+    <input id="fullName" name="fullName" required
+           maxlength="100" autocomplete="name">
+
+    <label for="fatherName">Father's Name / والد کا نام *</label>
+    <input id="fatherName" name="fatherName" required maxlength="100">
+
+    <label for="gender">Gender / جنس *</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select Gender</option>
+      <option value="Male">Male / مرد</option>
+      <option value="Female">Female / خاتون</option>
+      <option value="Prefer not to say">Prefer not to say</option>
+    </select>
+
+    <label for="phone">Mobile Number / موبائل نمبر *</label>
+    <input id="phone" name="phone" type="tel" required
+           autocomplete="tel" placeholder="03XXXXXXXXX">
+
+    <label for="city">City / شہر *</label>
+    <input id="city" name="city" required maxlength="100">
+
+    <label for="district">District / ضلع *</label>
+    <input id="district" name="district" required maxlength="100">
+
+    <label for="tehsil">Tehsil / تحصیل</label>
+    <input id="tehsil" name="tehsil" maxlength="100">
+
+    <label for="province">Province / صوبہ *</label>
+    <select id="province" name="province" required>
+      <option value="">Select Province</option>
+      <option>Punjab</option>
+      <option>Sindh</option>
+      <option>Khyber Pakhtunkhwa</option>
+      <option>Balochistan</option>
+      <option>Islamabad Capital Territory</option>
+      <option>Gilgit-Baltistan</option>
+      <option>Azad Jammu and Kashmir</option>
+      <option>Other</option>
+    </select>
+
+    <label for="education">Education / تعلیم</label>
+    <input id="education" name="education" maxlength="150">
+
+    <label for="designation">Requested Position / مطلوبہ عہدہ *</label>
+    <select id="designation" name="designation" required>
+      <option value="">Select Position</option>
+      <option>Reporter</option>
+      <option>District Representative</option>
+      <option>Tehsil Representative</option>
+      <option>City Representative</option>
+      <option>Female Reporter</option>
+      <option>News Correspondent</option>
+    </select>
+
+    <label for="experience">Previous Experience / سابقہ تجربہ</label>
+    <textarea id="experience" name="experience"
+      maxlength="2000"
+      placeholder="اپنا صحافتی تجربہ اور سابقہ میڈیا اداروں کی تفصیل لکھیں"></textarea>
+
+    <label for="history">Professional History / مکمل صحافتی تفصیل</label>
+    <textarea id="history" name="history"
+      maxlength="3000"
+      placeholder="اپنے سابقہ کام، مہارتوں اور صحافتی تجربے کی تفصیل درج کریں"></textarea>
+
+    <label for="social">Social Media or Portfolio Link</label>
+    <input id="social" name="social" type="url"
+      placeholder="https://">
+
+    <label for="photo1">Applicant Photo / امیدوار کی تصویر *</label>
+    <input id="photo1" name="photo1" type="file"
+      accept="image/*" required>
+
+    <label for="photo2">Second Photo / دوسری تصویر</label>
+    <input id="photo2" name="photo2" type="file"
+      accept="image/*">
+
+    <label for="cnicFront">CNIC Front / شناختی کارڈ کا اگلا رخ</label>
+    <input id="cnicFront" name="cnicFront" type="file"
+      accept="image/*">
+
+    <label for="cnicBack">CNIC Back / شناختی کارڈ کا پچھلا رخ</label>
+    <input id="cnicBack" name="cnicBack" type="file"
+      accept="image/*">
+
+    <div class="payment-box">
+      <h3>💳 Registration Payment / رجسٹریشن فیس</h3>
+
+      <p>
+        <strong>Fee:</strong> Rs. 1,000
+      </p>
+
+      <p>
+        <strong>Payment Method:</strong> EasyPaisa
+      </p>
+
+      <p>
+        <strong>Account Title:</strong> Muhammad Iftikhar
+      </p>
+
+      <p>
+        <strong>EasyPaisa Number:</strong> 03223449924
+      </p>
+
+      <label for="transaction">
+        Transaction ID / ٹرانزیکشن نمبر
+      </label>
+
+      <input id="transaction" name="transaction"
+        maxlength="100" placeholder="Transaction ID">
+
+      <label for="paymentScreenshot">
+        Payment Screenshot / ادائیگی کا اسکرین شاٹ *
+      </label>
+
+      <input id="paymentScreenshot" name="paymentScreenshot"
+        type="file" accept="image/*" required>
+
+      <small>
+        براہ کرم ادائیگی کا ثبوت محفوظ رکھیں۔
+        غیر ضروری مالی معلومات یا PIN شیئر نہ کریں۔
+      </small>
     </div>
-  </section>
 
-  <section id="latest">
-    <div class="section-heading">
-      <h2>تازہ خبریں | LATEST NEWS</h2>
-      <small>خودکار اپ ڈیٹ</small>
-    </div>
-    <div class="news-grid" id="latestGrid">
-      <div class="status-message">تازہ خبریں لوڈ ہو رہی ہیں...</div>
-    </div>
-  </section>
+    <label>
+      <input type="checkbox" id="consent" required
+        style="width:auto; margin-right:8px;">
+      I confirm that the information provided is correct and I agree
+      to the channel's verification and appointment process.
+    </label>
 
-  <section id="pakistan">
-    <div class="section-heading">
-      <h2>پاکستان کی خبریں | PAKISTAN</h2>
-    </div>
-    <div class="news-grid" id="pakistanGrid">
-      <div class="status-message">پاکستان کی خبریں لوڈ ہو رہی ہیں...</div>
-    </div>
-  </section>
+    <p class="news-meta" dir="rtl">
+      شناختی دستاویزات حساس معلومات ہیں۔ انہیں صرف تصدیق شدہ
+      انتظامیہ کو محفوظ طریقے سے فراہم کریں۔
+    </p>
 
-  <section id="world">
-    <div class="section-heading">
-      <h2>دنیا کی خبریں | WORLD</h2>
-    </div>
-    <div class="news-grid" id="worldGrid">
-      <div class="status-message">عالمی خبریں لوڈ ہو رہی ہیں...</div>
-    </div>
-  </section>
+    <button type="submit" class="button button-red">
+      SUBMIT APPLICATION ON WHATSAPP
+    </button>
 
-  <section id="bahawalnagar">
-    <div class="section-heading">
-      <h2>بہاولنگر کی خبریں | BAHAWALNAGAR</h2>
-    </div>
-    <div class="status-message">
-      بہاولنگر کی مقامی خبریں شامل کرنے کے لیے چینل کی ٹیم کی تصدیق شدہ رپورٹس شائع کریں۔
-      مقامی خبروں کا سیکشن فی الحال دستیاب RSS فیڈ سے الگ رکھا گیا ہے تاکہ غیر متعلقہ خبر کو
-      بہاولنگر کی مقامی خبر ظاہر نہ کیا جائے۔
-    </div>
-    <div class="news-grid" id="localGrid">
-      <article class="news-card">
-        <img src="https://placehold.co/600x350/10243b/ffffff?text=BAHAWALNAGAR"
-             alt="Bahawalnagar news">
-        <div class="news-card-content">
-          <span class="category">LOCAL NEWS</span>
-          <h3>بہاولنگر کی خبریں</h3>
-          <p>اپنی تصدیق شدہ مقامی خبر بھیجنے کے لیے نمائندہ درخواست فارم استعمال کریں۔</p>
-          <a class="read-more" href="#representative">خبر بھیجیں</a>
-        </div>
-      </article>
-    </div>
-  </section>
+    <p id="formStatus" class="status" aria-live="polite"></p>
 
-  <section id="representative">
-    <div class="section-heading">
-      <h2>نمائندہ بننے کے لیے درخواست</h2>
-      <small>REPRESENTATIVE APPLICATION</small>
+  </form>
+</section>
+
+<section class="news-section" id="management">
+  <h2 class="section-title">Channel Management</h2>
+
+  <div class="management">
+
+    <div class="manager">
+      <h3>MUHAMMAD IFTIKHAR</h3>
+      <p>Chief Executive Officer (CEO)</p>
     </div>
 
-    <div class="form-layout">
-      <div class="panel">
-        <h3>درخواست فارم</h3>
-        <p class="form-note">
-          تمام معلومات درست درج کریں۔ تصویر اور ادائیگی کا اسکرین شاٹ منتخب کرنے کے بعد
-          WhatsApp پر درخواست کی تفصیلات بھیجنے کا بٹن دبائیں۔
-        </p>
-
-        <form id="representativeForm">
-          <div class="form-grid">
-
-            <div class="field">
-              <label for="fullName">پورا نام *</label>
-              <input id="fullName" name="fullName" required
-                     placeholder="اپنا پورا نام درج کریں">
-            </div>
-
-            <div class="field">
-              <label for="fatherName">والد کا نام *</label>
-              <input id="fatherName" name="fatherName" required
-                     placeholder="والد کا نام">
-            </div>
-
-            <div class="field">
-              <label for="phone">موبائل نمبر *</label>
-              <input id="phone" name="phone" type="tel" required
-                     placeholder="03XXXXXXXXX">
-            </div>
-
-            <div class="field">
-              <label for="city">شہر / ضلع *</label>
-              <input id="city" name="city" required
-                     placeholder="مثلاً بہاولنگر">
-            </div>
-
-            <div class="field">
-              <label for="designation">درخواست کردہ عہدہ *</label>
-              <select id="designation" name="designation" required>
-                <option value="">عہدہ منتخب کریں</option>
-                <option>District Representative</option>
-                <option>City Reporter</option>
-                <option>Tehsil Reporter</option>
-                <option>News Correspondent</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="experience">صحافتی تجربہ</label>
-              <select id="experience" name="experience">
-                <option>تجربہ نہیں</option>
-                <option>1 سال سے کم</option>
-                <option>1 تا 3 سال</option>
-                <option>3 سال سے زیادہ</option>
-              </select>
-            </div>
-
-            <div class="field full">
-              <label for="address">مکمل پتہ</label>
-              <textarea id="address" name="address" rows="2"
-                        placeholder="اپنا پتہ درج کریں"></textarea>
-            </div>
-
-            <div class="field full">
-              <label for="photo">اپنی تصویر منتخب کریں *</label>
-              <input id="photo" name="photo" type="file"
-                     accept="image/*" required>
-              <img id="photoPreview" class="preview" alt="تصویر کا پیش نظارہ">
-            </div>
-
-            <div class="field full">
-              <label for="paymentScreenshot">ادائیگی کے اسکرین شاٹ کی فائل *</label>
-              <input id="paymentScreenshot" name="paymentScreenshot"
-                     type="file" accept="image/*,.pdf" required>
-              <img id="paymentPreview" class="preview" alt="ادائیگی کے اسکرین شاٹ کا پیش نظارہ">
-            </div>
-
-            <div class="field full">
-              <label style="display:flex;flex-direction:row;align-items:flex-start;gap:9px">
-                <input type="checkbox" id="declaration" required style="width:auto;margin-top:4px">
-                <span>میں تصدیق کرتا/کرتی ہوں کہ فراہم کردہ معلومات درست ہیں اور
-                  میں غیر مصدقہ یا گمراہ کن خبر شائع نہیں کروں گا/گی۔ *</span>
-              </label>
-            </div>
-
-            <div class="field full">
-              <button class="btn" type="submit">
-                درخواست کی تفصیلات WhatsApp پر بھیجیں
-              </button>
-              <div id="notice" role="status"></div>
-              <p class="form-note">
-                اہم: یہ بٹن آپ کے درج کردہ متن کو WhatsApp میں کھولتا ہے۔
-                منتخب فائلیں WhatsApp پیغام میں خود بخود منسلک نہیں ہوتیں۔
-                WhatsApp کھلنے کے بعد تصویر اور ادائیگی کا اسکرین شاٹ خود بھی منسلک کریں۔
-                ویب سائٹ سے فائلیں براہ راست وصول کرنے کے لیے محفوظ سرور اور اپ لوڈ سسٹم درکار ہے۔
-              </p>
-            </div>
-
-          </div>
-        </form>
-      </div>
-
-      <aside class="panel">
-        <h3>درخواست اور ادائیگی کی معلومات</h3>
-
-        <div class="payment-box">
-          <strong>چینل:</strong> STAR 9Z NEWS TV<br>
-          <strong>نمائندہ فیس:</strong> 1,000 پاکستانی روپے<br>
-          <strong>ادائیگی کا طریقہ:</strong> Easypaisa<br>
-          <strong>نمبر:</strong> <span id="easypaisaNumber">03223449924</span>
-          <button type="button" class="copy-btn"
-                  onclick="copyText('03223449924')">کاپی کریں</button><br>
-          <strong>اکاؤنٹ ٹائٹل:</strong> Muhammad Iftikhar
-        </div>
-
-        <p class="form-note">
-          ادائیگی سے پہلے چینل انتظامیہ سے فیس اور نمائندگی کی شرائط کی تصدیق کر لیں۔
-          فیس جمع کروانے سے نمائندگی یا تقرری خود بخود منظور نہیں ہوتی۔
-        </p>
-
-        <a class="contact-button"
-           href="https://wa.me/923227030993?text=Assalam-o-Alaikum%2C%20I%20want%20to%20apply%20as%20a%20STAR%209Z%20NEWS%20TV%20representative."
-           target="_blank" rel="noopener">
-          WhatsApp پر رابطہ کریں
-        </a>
-
-        <div class="payment-box">
-          <strong>رابطہ ای میل:</strong><br>
-          <a href="mailto:star9znewstv@gmail.com">star9znewstv@gmail.com</a>
-        </div>
-      </aside>
+    <div class="manager">
+      <h3>RAUF AHMAD</h3>
+      <p>Chief Operating Officer (COO)</p>
     </div>
-  </section>
 
-  <section id="management">
-    <div class="section-heading">
-      <h2>چینل انتظامیہ | CHANNEL MANAGEMENT</h2>
+    <div class="manager">
+      <h3>MUHAMMAD SHAFIQ</h3>
+      <p>Director</p>
     </div>
-    <div class="news-grid">
-      <article class="news-card">
-        <div class="news-card-content">
-          <span class="category">CEO</span>
-          <h3>MUHAMMAD IFTIKHAR</h3>
-          <p>Chief Executive Officer</p>
-        </div>
-      </article>
-      <article class="news-card">
-        <div class="news-card-content">
-          <span class="category">COO</span>
-          <h3>RAUF AHMAD</h3>
-          <p>Chief Operating Officer</p>
-        </div>
-      </article>
-      <article class="news-card">
-        <div class="news-card-content">
-          <span class="category">DIRECTOR</span>
-          <h3>MUHAMMAD SHAFIQ</h3>
-          <p>Director</p>
-        </div>
-      </article>
-    </div>
-  </section>
+
+  </div>
+</section>
+
+<section class="news-section">
+  <div class="card">
+    <h3>Contact STAR 9Z NEWS TV</h3>
+
+    <p>WhatsApp for Applications: 03227030993</p>
+
+    <p>EasyPaisa: 03223449924</p>
+
+    <a class="button button-gold"
+       href="https://wa.me/923227030993"
+       target="_blank" rel="noopener">
+      CONTACT ON WHATSAPP
+    </a>
+
+    <a class="button button-red"
+       href="https://www.facebook.com/profile.php?id=61595229151558"
+       target="_blank" rel="noopener">
+      FACEBOOK PAGE
+    </a>
+  </div>
+</section>
 
 </main>
 
-<footer id="contact">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h3>STAR 9Z NEWS TV</h3>
-        <p>TRUTH | NEWS | PEOPLE</p>
-        <p>
-          ہمارا مقصد خبروں کو ذمہ داری کے ساتھ پیش کرنا ہے۔
-          خبر کی اشاعت سے پہلے معلومات کی تصدیق ضروری ہے۔
-        </p>
-      </div>
-      <div>
-        <h3>اہم لنکس</h3>
-        <ul>
-          <li><a href="#pakistan">پاکستان کی خبریں</a></li>
-          <li><a href="#world">دنیا کی خبریں</a></li>
-          <li><a href="#bahawalnagar">بہاولنگر کی خبریں</a></li>
-          <li><a href="#representative">نمائندہ درخواست</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>رابطہ کریں</h3>
-        <p>WhatsApp: 03227030993</p>
-        <p>Easypaisa: 03223449924</p>
-        <p>Email: star9znewstv@gmail.com</p>
-        <a class="contact-button"
-           href="https://wa.me/923227030993"
-           target="_blank" rel="noopener">WhatsApp رابطہ</a>
-      </div>
-    </div>
-    <div class="copyright">
-      © <span id="year"></span> STAR 9Z NEWS TV. All rights reserved.
-      <br>Truth | News | People
-    </div>
-  </div>
+<footer>
+  <strong>STAR 9Z NEWS TV</strong><br>
+  TRUTH | NEWS | PEOPLE<br>
+  The Voice of Truth<br>
+  Pakistan & World News<br>
+  © <span id="footerYear"></span> STAR 9Z NEWS TV
 </footer>
-
-<script>
+</head><script>
 "use strict";
 
-/* پاکستان کی تاریخ اور چلتی ہوئی گھڑی */
-function updatePakistanClock(){
+/* =====================================
+   1. PAKISTAN DATE AND LIVE CLOCK
+===================================== */
+
+function updatePakistanClock() {
   const now = new Date();
 
-  try{
-    document.getElementById("pakDate").textContent =
-      new Intl.DateTimeFormat("ur-PK",{
-        timeZone:"Asia/Karachi",
-        weekday:"long",
-        year:"numeric",
-        month:"long",
-        day:"numeric"
-      }).format(now);
+  const dateText = new Intl.DateTimeFormat("ur-PK", {
+    timeZone: "Asia/Karachi",
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  }).format(now);
 
-    document.getElementById("pakClock").textContent =
-      new Intl.DateTimeFormat("en-GB",{
-        timeZone:"Asia/Karachi",
-        hour:"2-digit",
-        minute:"2-digit",
-        second:"2-digit",
-        hour12:true
-      }).format(now);
-  }catch(error){
-    document.getElementById("pakDate").textContent =
-      now.toLocaleDateString();
-    document.getElementById("pakClock").textContent =
-      now.toLocaleTimeString();
-  }
+  const timeText = new Intl.DateTimeFormat("en-PK", {
+    timeZone: "Asia/Karachi",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  }).format(now);
+
+  document.getElementById("pakDate").textContent =
+    "تاریخ: " + dateText;
+
+  document.getElementById("pakClock").textContent =
+    "Pakistan Time: " + timeText;
 }
 
 updatePakistanClock();
-setInterval(updatePakistanClock,1000);
+setInterval(updatePakistanClock, 1000);
 
-document.getElementById("year").textContent =
+document.getElementById("footerYear").textContent =
   new Date().getFullYear();
 
-/* News feeds: public Google News RSS via rss2json.
-   External services may be unavailable or rate-limited. */
-const NEWS_FEEDS = [
-  {
-    key:"pakistan",
-    title:"پاکستان",
-    url:"https://news.google.com/rss/search?q=Pakistan+news&hl=en-PK&gl=PK&ceid=PK:en"
-  },
-  {
-    key:"world",
-    title:"دنیا",
-    url:"https://news.google.com/rss/search?q=world+news&hl=en&gl=US&ceid=US:en"
-  }
-];
 
-let newsItems = [];
-let isLoadingNews = false;
+/* =====================================
+   2. AUTOMATIC NEWS FEEDS
+   RSS-to-JSON service is external.
+   Internet and service availability required.
+===================================== */
 
-function escapeHTML(value){
-  return String(value ?? "").replace(/[&<>"']/g,function(ch){
+const RSS_CONVERTER =
+  "https://api.rss2json.com/v1/api.json?rss_url=";
+
+const NEWS_FEEDS = {
+  pakistan:
+    "https://news.google.com/rss/search?q=Pakistan+news&hl=en-PK&gl=PK&ceid=PK:en",
+
+  world:
+    "https://news.google.com/rss/search?q=world+news&hl=en&gl=US&ceid=US:en"
+};
+
+let allNews = [];
+let activeNewsFilter = "all";
+let tickerPosition = 0;
+
+
+/* Avoid treating untrusted feed HTML as website HTML. */
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, function(char) {
     return {
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      '"':"&quot;",
-      "'":"&#39;"
-    }[ch];
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    }[char];
   });
 }
 
-function safeURL(value){
-  try{
+function safeNewsURL(value) {
+  try {
     const url = new URL(value);
-    if(url.protocol === "https:" || url.protocol === "http:"){
+
+    if (url.protocol === "https:" || url.protocol === "http:") {
       return url.href;
     }
-  }catch(e){}
-  return "#";
-}
-
-function getFallbackImage(title){
-  return "https://placehold.co/600x350/10243b/ffffff?text=" +
-    encodeURIComponent(String(title || "STAR 9Z NEWS").slice(0,60));
-}
-
-function extractImage(item){
-  if(item.enclosure && item.enclosure.link){
-    return safeURL(item.enclosure.link);
-  }
-
-  if(item.thumbnail && item.thumbnail.startsWith("http")){
-    return safeURL(item.thumbnail);
-  }
-
-  if(item.description){
-    const match = item.description.match(/<img[^>]+src=["']([^"']+)["']/i);
-    if(match){
-      return safeURL(match[1]);
-    }
-  }
+  } catch (error) {}
 
   return "";
 }
 
-function cleanDescription(value){
-  const box = document.createElement("div");
-  box.innerHTML = value || "";
-  return (box.textContent || box.innerText || "")
-    .replace(/\s+/g," ")
-    .trim()
-    .slice(0,240);
-}
+function makeNewsCard(item) {
+  const title = escapeHTML(item.title || "News Update");
+  const source = escapeHTML(item.source || "News Feed");
+  const date = escapeHTML(item.date || "");
+  const link = safeNewsURL(item.link);
 
-function normaliseItem(item,category){
-  return {
-    title:cleanDescription(item.title || "خبر"),
-    description:cleanDescription(item.description || item.content || ""),
-    link:safeURL(item.link || ""),
-    image:extractImage(item),
-    date:item.pubDate || item.published || "",
-    category:category
-  };
-}
-
-function renderNewsCard(item){
-  const title = escapeHTML(item.title);
-  const description = escapeHTML(item.description || "مزید تفصیلات کے لیے اصل خبر کھولیں۔");
-  const category = escapeHTML(item.category || "NEWS");
-  const link = safeURL(item.link);
-  const image = item.image ? safeURL(item.image) : getFallbackImage(item.title);
+  const linkHTML = link
+    ? `<a href="${escapeHTML(link)}"
+          target="_blank" rel="noopener noreferrer">
+          Read Full Story →
+       </a>`
+    : `<span class="news-meta">اصل خبر کا لنک دستیاب نہیں</span>`;
 
   return `
-    <article class="news-card">
-      <a href="${link}" target="_blank" rel="noopener noreferrer">
-        <img src="${image}" alt="${title}" loading="lazy"
-             onerror="this.onerror=null;this.src='${getFallbackImage(item.title)}'">
-      </a>
-      <div class="news-card-content">
-        <span class="category">${category}</span>
-        <h3><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
-        <p>${description || "مزید تفصیلات اصل خبر میں دیکھیے۔"}</p>
-        <a class="read-more" href="${link}" target="_blank" rel="noopener noreferrer">
-          مکمل خبر پڑھیں
-        </a>
-        <div class="news-meta">${escapeHTML(item.date)}</div>
-      </div>
-    </article>`;
+    <article class="news-item">
+      <div class="news-meta">${source}</div>
+      <h3>${title}</h3>
+      <div class="news-meta">${date}</div>
+      <p>${linkHTML}</p>
+    </article>
+  `;
 }
 
-function renderSideCard(item){
-  const title = escapeHTML(item.title);
-  const link = safeURL(item.link);
-  const image = item.image ? safeURL(item.image) : getFallbackImage(item.title);
+async function fetchNews(category) {
+  const feedURL = NEWS_FEEDS[category];
 
-  return `
-    <article class="side-card">
-      <a href="${link}" target="_blank" rel="noopener noreferrer">
-        <img src="${image}" alt="${title}" loading="lazy"
-             onerror="this.onerror=null;this.src='${getFallbackImage(item.title)}'">
-      </a>
-      <div>
-        <h3><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
-        <p>${escapeHTML(item.category)} ${escapeHTML(item.date)}</p>
-      </div>
-    </article>`;
-}
+  const response = await fetch(
+    RSS_CONVERTER + encodeURIComponent(feedURL),
+    { cache: "no-store" }
+  );
 
-function renderSection(elementId,items,emptyText){
-  const el = document.getElementById(elementId);
-  if(!items.length){
-    el.innerHTML = `<div class="status-message">${escapeHTML(emptyText)}</div>`;
-    return;
-  }
-  el.innerHTML = items.map(renderNewsCard).join("");
-}
-
-function renderAllNews(){
-  if(!newsItems.length) return;
-
-  const pakistan = newsItems.filter(n => n.category === "PAKISTAN");
-  const world = newsItems.filter(n => n.category === "WORLD");
-
-  renderSection("latestGrid",newsItems.slice(0,12),
-    "فی الحال تازہ خبریں دستیاب نہیں۔ بعد میں دوبارہ کوشش کریں۔");
-  renderSection("pakistanGrid",pakistan.slice(0,9),
-    "پاکستان کی خبریں فی الحال لوڈ نہیں ہو سکیں۔");
-  renderSection("worldGrid",world.slice(0,9),
-    "عالمی خبریں فی الحال لوڈ نہیں ہو سکیں۔");
-
-  const side = newsItems.slice(0,4);
-  document.getElementById("topStories").innerHTML =
-    side.length ? side.map(renderSideCard).join("") :
-    '<div class="status-message">تازہ سرخیاں دستیاب نہیں۔</div>';
-
-  const hero = newsItems[0];
-  if(hero){
-    document.getElementById("heroTitle").textContent = hero.title;
-    document.getElementById("heroDescription").textContent =
-      hero.description || "مکمل خبر پڑھنے کے لیے اصل خبر کھولیں۔";
-    document.getElementById("heroMeta").textContent =
-      hero.category + (hero.date ? " | " + hero.date : "");
-
-    const heroImage = document.getElementById("heroImage");
-    heroImage.src = hero.image || getFallbackImage(hero.title);
-    heroImage.onerror = function(){
-      this.onerror = null;
-      this.src = getFallbackImage(hero.title);
-    };
-    heroImage.style.cursor = "pointer";
-    heroImage.onclick = function(){
-      if(hero.link && hero.link !== "#"){
-        window.open(hero.link,"_blank","noopener");
-      }
-    };
+  if (!response.ok) {
+    throw new Error("News feed request failed");
   }
 
-  document.getElementById("breakingText").textContent =
-    newsItems.slice(0,6).map(n => n.title).join("  ✦  ") ||
-    "STAR 9Z NEWS TV — تازہ خبریں";
+  const data = await response.json();
 
-  document.getElementById("latestTicker").textContent =
-    newsItems.slice(0,8).map(n => n.title).join("  |  ");
-
-  document.getElementById("newsStatus").textContent =
-    "آخری کوشش: " + new Date().toLocaleTimeString();
-}
-
-async function loadFeed(feed){
-  const rssURL = "https://api.rss2json.com/v1/api.json?rss_url=" +
-    encodeURIComponent(feed.url);
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(),12000);
-
-  try{
-    const response = await fetch(rssURL,{signal:controller.signal});
-    if(!response.ok) throw new Error("RSS service returned " + response.status);
-
-    const data = await response.json();
-    if(data.status !== "ok" || !Array.isArray(data.items)){
-      throw new Error("RSS feed not available");
-    }
-
-    return data.items.map(item => normaliseItem(item,feed.title.toUpperCase()));
-  }finally{
-    clearTimeout(timeout);
+  if (data.status !== "ok" || !Array.isArray(data.items)) {
+    throw new Error("News feed unavailable");
   }
+
+  return data.items.map(item => ({
+    category: category,
+    title: item.title || "News Update",
+    link: item.link || "",
+    source: item.author || category.toUpperCase(),
+    date: item.pubDate || ""
+  }));
 }
 
-async function loadAllNews(){
-  if(isLoadingNews) return;
-  isLoadingNews = true;
+function uniqueNews(items) {
+  const seen = new Set();
 
-  const status = document.getElementById("newsStatus");
-  status.textContent = "تازہ خبریں چیک کی جا رہی ہیں...";
+  return items.filter(item => {
+    const key = (item.title || "").trim().toLowerCase();
 
-  try{
-    const results = await Promise.allSettled(
-      NEWS_FEEDS.map(feed => loadFeed(feed))
-    );
+    if (!key || seen.has(key)) return false;
 
-    let received = [];
-    results.forEach(result => {
-      if(result.status === "fulfilled"){
-        received = received.concat(result.value);
-      }
-    });
-
-    if(received.length){
-      const seen = new Set();
-      const unique = received.filter(item => {
-        const key = item.title.toLowerCase();
-        if(!key || seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      });
-
-      unique.sort((a,b) => {
-        const da = Date.parse(a.date) || 0;
-        const db = Date.parse(b.date) || 0;
-        return db - da;
-      });
-
-      newsItems = unique;
-      renderAllNews();
-      status.textContent = "خبریں اپ ڈیٹ ہو گئیں: " +
-        new Date().toLocaleTimeString();
-    }else{
-      status.textContent = "نیوز فیڈ دستیاب نہیں؛ انٹرنیٹ یا سروس دوبارہ چیک کریں۔";
-      if(!newsItems.length){
-        document.getElementById("latestGrid").innerHTML =
-          '<div class="status-message error-note">خودکار نیوز فیڈ سے خبریں نہیں مل سکیں۔ کچھ دیر بعد دوبارہ کوشش کریں۔</div>';
-        document.getElementById("pakistanGrid").innerHTML =
-          '<div class="status-message">پاکستان کی خبریں فی الحال دستیاب نہیں۔</div>';
-        document.getElementById("worldGrid").innerHTML =
-          '<div class="status-message">عالمی خبریں فی الحال دستیاب نہیں۔</div>';
-        document.getElementById("topStories").innerHTML =
-          '<div class="status-message">نیوز فیڈ دستیاب نہیں۔</div>';
-      }
-    }
-  }catch(error){
-    status.textContent = "نیوز فیڈ لوڈ نہیں ہوئی؛ بعد میں دوبارہ کوشش ہوگی۔";
-    console.error("STAR 9Z news feed error:",error);
-  }finally{
-    isLoadingNews = false;
-  }
-}
-
-/* Start immediately; retry every 60 seconds */
-loadAllNews();
-setInterval(loadAllNews,60000);
-
-/* Image previews */
-function setupPreview(inputId,previewId){
-  const input = document.getElementById(inputId);
-  const preview = document.getElementById(previewId);
-
-  input.addEventListener("change",function(){
-    const file = input.files && input.files[0];
-
-    if(!file){
-      preview.style.display = "none";
-      preview.removeAttribute("src");
-      return;
-    }
-
-    if(!file.type.startsWith("image/")){
-      preview.style.display = "none";
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function(event){
-      preview.src = event.target.result;
-      preview.style.display = "block";
-    };
-    reader.readAsDataURL(file);
+    seen.add(key);
+    return true;
   });
 }
 
-setupPreview("photo","photoPreview");
-setupPreview("paymentScreenshot","paymentPreview");
+async function loadAllNews() {
+  const status = document.getElementById("newsStatus");
 
-/* Representative application: opens WhatsApp with text details.
-   Selected files must be attached manually after WhatsApp opens. */
-document.getElementById("representativeForm").addEventListener("submit",function(event){
-  event.preventDefault();
+  status.textContent =
+    "انٹرنیٹ سے پاکستان اور عالمی خبریں حاصل کی جا رہی ہیں...";
 
-  const form = event.currentTarget;
+  const results = await Promise.allSettled([
+    fetchNews("pakistan"),
+    fetchNews("world")
+  ]);
 
-  if(!form.reportValidity()) return;
+  const pakistanResult = results[0];
+  const worldResult = results[1];
 
-  const photo = document.getElementById("photo").files[0];
-  const payment = document.getElementById("paymentScreenshot").files[0];
+  const pakistanItems =
+    pakistanResult.status === "fulfilled"
+      ? pakistanResult.value
+      : [];
 
-  const fileSummary = [
-    "Photo selected: " + (photo ? photo.name : "No"),
-    "Payment screenshot selected: " + (payment ? payment.name : "No")
-  ].join("\n");
+  const worldItems =
+    worldResult.status === "fulfilled"
+      ? worldResult.value
+      : [];
 
-  const message =
-`STAR 9Z NEWS TV — REPRESENTATIVE APPLICATION
+  allNews = uniqueNews([
+    ...pakistanItems,
+    ...worldItems
+  ]);
 
-Full Name: ${document.getElementById("fullName").value.trim()}
-Father's Name: ${document.getElementById("fatherName").value.trim()}
-Mobile: ${document.getElementById("phone").value.trim()}
-City/District: ${document.getElementById("city").value.trim()}
-Requested Designation: ${document.getElementById("designation").value}
-Experience: ${document.getElementById("experience").value}
-Address: ${document.getElementById("address").value.trim()}
+  document.getElementById("pakistanNews").innerHTML =
+    pakistanItems.length
+      ? pakistanItems.slice(0, 12).map(makeNewsCard).join("")
+      : `<div class="card">
+           پاکستان کی نیوز فیڈ اس وقت دستیاب نہیں۔
+           کچھ دیر بعد دوبارہ کوشش کریں۔
+         </div>`;
 
-${fileSummary}
+  document.getElementById("worldNews").innerHTML =
+    worldItems.length
+      ? worldItems.slice(0, 12).map(makeNewsCard).join("")
+      : `<div class="card">
+           عالمی نیوز فیڈ اس وقت دستیاب نہیں۔
+           کچھ دیر بعد دوبارہ کوشش کریں۔
+         </div>`;
 
-I confirm that the information provided is correct.
-Please guide me regarding application verification.`;
+  if (allNews.length) {
+    status.textContent =
+      "تازہ نیوز فیڈ لوڈ ہو گئی۔ آخری تازہ کاری: " +
+      new Date().toLocaleTimeString("en-PK", {
+        timeZone: "Asia/Karachi"
+      });
 
-  const notice = document.getElementById("notice");
-  notice.style.display = "block";
-  notice.textContent =
-    "اب WhatsApp کھلے گا۔ پیغام بھیجیں، پھر اسی چیٹ میں اپنی منتخب کردہ تصویر اور ادائیگی کا اسکرین شاٹ بھی منسلک کریں۔";
+    renderNews();
+    updateTicker();
+  } else {
+    status.textContent =
+      "نیوز فیڈ دستیاب نہیں۔ انٹرنیٹ یا نیوز سروس کی دستیابی چیک کریں۔";
 
-  const whatsappURL =
-    "https://wa.me/923227030993?text=" + encodeURIComponent(message);
+    document.getElementById("newsGrid").innerHTML =
+      `<div class="card">
+         اس وقت خودکار خبریں لوڈ نہیں ہو سکیں۔
+         براہ کرم کچھ دیر بعد دوبارہ کوشش کریں۔
+       </div>`;
 
-  window.open(whatsappURL,"_blank","noopener");
-});
-
-/* Copy Easypaisa number */
-async function copyText(value){
-  try{
-    await navigator.clipboard.writeText(value);
-    alert("نمبر کاپی ہو گیا: " + value);
-  }catch(error){
-    const temp = document.createElement("textarea");
-    temp.value = value;
-    document.body.appendChild(temp);
-    temp.select();
-    document.execCommand("copy");
-    temp.remove();
-    alert("نمبر کاپی ہو گیا: " + value);
+    document.getElementById("tickerText").textContent =
+      "STAR 9Z NEWS TV — نیوز فیڈ عارضی طور پر دستیاب نہیں۔";
   }
 }
+
+function renderNews() {
+  let filtered = allNews;
+
+  if (activeNewsFilter !== "all") {
+    filtered = allNews.filter(
+      item => item.category === activeNewsFilter
+    );
+  }
+
+  document.getElementById("newsGrid").innerHTML =
+    filtered.length
+      ? filtered.slice(0, 18).map(makeNewsCard).join("")
+      : `<div class="card">
+           منتخب کیٹیگری کی خبریں فی الحال دستیاب نہیں۔
+         </div>`;
+}
+
+function showNews(category, button) {
+  activeNewsFilter = category;
+
+  document.querySelectorAll(".news-tab").forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  if (button) button.classList.add("active");
+
+  renderNews();
+}
+
+function updateTicker() {
+  if (!allNews.length) return;
+
+  const headlines = allNews
+    .slice(0, 15)
+    .map(item => item.title)
+    .filter(Boolean);
+
+  if (!headlines.length) return;
+
+  document.getElementById("tickerText").textContent =
+    "STAR 9Z NEWS TV  |  " + headlines.join("   ◆   ");
+}
+
+/* Change the displayed news cards automatically. */
+setInterval(() => {
+  if (!allNews.length) return;
+
+  const grid = document.getElementById("newsGrid");
+  const filtered = activeNewsFilter === "all"
+    ? allNews
+    : allNews.filter(item => item.category === activeNewsFilter);
+
+  if (!filtered.length) return;
+
+  tickerPosition = (tickerPosition + 1) % filtered.length;
+
+  const rotated = [
+    ...filtered.slice(tickerPosition),
+    ...filtered.slice(0, tickerPosition)
+  ];
+
+  grid.innerHTML = rotated.slice(0, 18).map(makeNewsCard).join("");
+}, 20000);
+
+/* Refresh the feeds every 10 minutes. */
+loadAllNews();
+setInterval(loadAllNews, 10 * 60 * 1000);
+
+
+/* =====================================
+   3. REPRESENTATIVE APPLICATION FORM
+===================================== */
+
+document.getElementById("representativeForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+
+    if (!form.reportValidity()) return;
+
+    const getValue = id =>
+      document.getElementById(id).value.trim();
+
+    const applicant = {
+      name: getValue("fullName"),
+      father: getValue("fatherName"),
+      gender: getValue("gender"),
+      phone: getValue("phone"),
+      city: getValue("city"),
+      district: getValue("district"),
+      tehsil: getValue("tehsil"),
+      province: getValue("province"),
+      education: getValue("education"),
+      designation: getValue("designation"),
+      experience: getValue("experience"),
+      history: getValue("history"),
+      social: getValue("social"),
+      transaction: getValue("transaction")
+    };
+
+    const photo1 = document.getElementById("photo1").files[0];
+    const photo2 = document.getElementById("photo2").files[0];
+    const cnicFront = document.getElementById("cnicFront").files[0];
+    const cnicBack = document.getElementById("cnicBack").files[0];
+    const payment = document.getElementById("paymentScreenshot").files[0];
+
+    function fileName(file) {
+      return file ? file.name : "Not attached";
+    }
+
+    const message = [
+      "STAR 9Z NEWS TV — REPRESENTATIVE APPLICATION",
+      "",
+      "Name: " + applicant.name,
+      "Father's Name: " + applicant.father,
+      "Gender: " + applicant.gender,
+      "Mobile: " + applicant.phone,
+      "City: " + applicant.city,
+      "District: " + applicant.district,
+      "Tehsil: " + applicant.tehsil,
+      "Province: " + applicant.province,
+      "Education: " + applicant.education,
+      "Requested Position: " + applicant.designation,
+      "Experience: " + applicant.experience,
+      "Professional History: " + applicant.history,
+      "Portfolio: " + applicant.social,
+      "Transaction ID: " + applicant.transaction,
+      "",
+      "Registration Fee: Rs. 1,000",
+      "Payment Account Title: Muhammad Iftikhar",
+      "Payment Number: 03223449924",
+      "",
+      "Selected file names (files are NOT attached automatically):",
+      "Applicant Photo: " + fileName(photo1),
+      "Second Photo: " + fileName(photo2),
+      "CNIC Front: " + fileName(cnicFront),
+      "CNIC Back: " + fileName(cnicBack),
+      "Payment Screenshot: " + fileName(payment),
+      "",
+      "I request verification of my representative application."
+    ].join("\n");
+
+    document.getElementById("formStatus").textContent =
+      "واٹس ایپ کھولا جا رہا ہے۔ منتخب تصاویر اور ادائیگی کا اسکرین شاٹ الگ سے منسلک کرنا ضروری ہے۔";
+
+    const whatsappURL =
+      "https://wa.me/923227030993?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank", "noopener");
+
+    alert(
+      "درخواست کا پیغام تیار ہے۔ واٹس ایپ میں بھیجنے سے پہلے معلومات چیک کریں۔ تصاویر اور ادائیگی کا اسکرین شاٹ الگ سے منسلک کریں۔"
+    );
+  });
 </script>
 
 </body>
